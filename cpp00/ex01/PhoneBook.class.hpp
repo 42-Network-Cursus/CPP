@@ -1,15 +1,20 @@
-#ifndef PhoneBook_class_cpp
-# define PhoneBook_class_cpp
+#ifndef PHONEBOOK_CLASS_HPP
+# define PHONEBOOK_CLASS_HPP
 
 # include "Contact.class.hpp"
-class PhoneBook {
+# include <iostream>
+# include <string>
 
+class PhoneBook 
+{
 public:
-
 	PhoneBook(void);
 	~PhoneBook(void);
-
+	
 	Contact array[8];
+
+	void	addContact(Contact *array);
+	void	searchContact(Contact *array);
 };
 
 #endif

@@ -1,10 +1,9 @@
-NAME	=	MyDirectory
-SRCS	=	main.cpp Contact.class.cpp PhoneBook.class.cpp
+NAME	=	Sed_is_for_losers
+SRCS	=	main.cpp
 OBJS	=	$(SRCS:.cpp=.o)
-FLAGS	= -Wall -Wextra -Werror -std=c++98 \
-
-CC	=	c++
-RM	=	rm -rf
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
+CC		=	c++
+RM		=	rm -rf
 
 all	: $(NAME)
 

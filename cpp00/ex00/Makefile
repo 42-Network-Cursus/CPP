@@ -1,7 +1,7 @@
 NAME	=	megaphone
 
 FLAGS	= -Wall -Wextra -Werror \
-# -std=c++98
+ -std=c++98
 
 CC	=	c++
 
@@ -14,5 +14,7 @@ $(NAME)	:
 
 fclean	:
 			$(RM) $(NAME)
+
+re		:	fclean all
 
 PHONY	:	all fclean 

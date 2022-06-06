@@ -1,20 +1,19 @@
-#ifndef Contact_class_cpp
-# define Contact_class_cpp
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
 
 # include <string>
 
-class Contact {
-
+class Contact 
+{
 public:
-
 	Contact(void);
 	~Contact(void);
 
-	string	first_name;
-	string	last_name;
-	string	nickname;
-	string	phone_number;
-	string	darkest_secret;
+	std::string	first_name;
+	std::string	last_name;
+	std::string	nickname;
+	std::string	darkest_secret;
+	std::string phone_number;
 };
 
 #endif
