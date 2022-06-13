@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 09 14:33:17 2022
+# Make data base, printed on Mon Jun 13 23:44:45 2022
 
 # Variables
 
@@ -27,7 +27,7 @@ VBOX_MSI_INSTALL_PATH = D:\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\Cyril Wastchenko\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-f3107657-920f-4443-8935-f30138b37d42-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-d6963859-337e-464e-8308-867f0c946cfb-sock
 # environment
 VSCODE_CWD = C:\Users\Cyril Wastchenko\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -45,7 +45,7 @@ MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # environment
 DOKANLIBRARY1_LIBRARYPATH_X64 = C:\Program Files\Dokan\Dokan Library-1.4.1\lib\
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5848_ASDRZONCLTNTPMHV
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_10444_GJHMNPYVVZDJIJOD
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -61,7 +61,7 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Cyril Wastchenko\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = C:\Users\Cyril Wastchenko\AppData\Roaming\Code\CachedData\4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
 LANG = C
 # default
@@ -83,7 +83,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 DOKANLIBRARY1_LIBRARYPATH_X86 = C:\Program Files\Dokan\Dokan Library-1.4.1\x86\lib\
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
@@ -103,7 +103,7 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 5848
+VSCODE_PID = 10444
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -183,7 +183,8 @@ MAKE_VERSION := 4.3
 # environment
 PLATFORMCODE = KV
 # environment
-PROGRAMFILES(X86) = C:\Program Files (x86)
+PROGRAMFILES(X86) = C:\Program 
+ Files (x86)
 # environment
 USERDOMAIN_ROAMINGPROFILE = LAPTOP-5J89K4R6
 # environment
@@ -205,7 +206,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Users\CYRILW~1\AppData\Local\Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\a76266384f72284c200a7e89412d430e-1.67.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\a76266384f72284c200a7e89412d430e-1.68.0-main-sock
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -298,6 +299,6 @@ GNUmakefile:
 # strcache performance: lookups = 24 / hit rate = 12%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Thu Jun 09 14:33:17 2022
+# Finished Make data base on Mon Jun 13 23:44:45 2022
 
  

@@ -30,6 +30,25 @@ void	Harl::error(void)
 	std::cout << "ERROR" << std::endl;
 }
 
+int	levelFilter(std::string level)
+{
+	std::string filterlvl[] =
+	{
+		"default",
+		"debug",
+		"info",
+		"warning",
+		"error"
+	};
+
+	for (int i = 1; i < 5; i++)
+	{
+		if (level == filterlvl[i])
+			return (i);
+	}
+	return (0);
+}
+
 void	Harl::complain(std::string level)
 {
 	enum elvl
@@ -40,14 +59,7 @@ void	Harl::complain(std::string level)
 		ERROR
 	};
 
-	std::map<std::string, elvl> levels;
-	
-	levels["debug"] = DEBUG;
-	levels["info"] = INFO;
-	levels["warning"] = WARNING;
-	levels["error"] = ERROR;
-
-	switch (levels[level])
+	switch (levelFilter(level))
 	{
 		case DEBUG:
 			this->debug();
