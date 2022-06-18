@@ -37,10 +37,17 @@ Point& Point::operator=(Point const& point)
 	return (*this);
 }
 
-std::ostream&	operator <<(std::ostream& oStream, Point const& point)
+std::ostream&	operator<<(std::ostream& os, Point const& point)
 {
 	Fixed x(point.getX());
 	Fixed y(point.getY());
-	oStream << "(" << x.getRawBits() << "," << y.getRawBits() << ")" << std::endl;
-	return (oStream);
+	os << "(" << (x.getRawBits() / 256) << "," << (y.getRawBits() / 256) << ")";
+	return (os);
+}
+
+float	Point::operator*(Point const& point) const
+{
+	Fixed a(this->_x * point._x);
+	Fixed b(this->_y * point._y);
+	return (a.getRawBits() + b.getRawBits());
 }

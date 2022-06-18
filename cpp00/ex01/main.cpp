@@ -1,27 +1,27 @@
 #include <iostream>
 #include <string>
-#include "Contact.class.hpp"
-#include "PhoneBook.class.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int	main()
 {
-	std::string	usr_input;
+	std::string	input;
 	PhoneBook	directory;
 
 	std::cout << "This is a phonebook. Use it to add and/or search your contacts." << std::endl;
 	while (1)
 	{
 		std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
-		std::getline(std::cin, usr_input);
-		if (usr_input == "ADD")
+		std::getline(std::cin, input);
+		if (input == "ADD")
 		{
-			directory.addContact(directory.array);
+			directory.addContact(directory._list);
 		}
-		else if (usr_input == "SEARCH")
+		else if (input == "SEARCH")
 		{
-			directory.searchContact(directory.array);
+			directory.searchContact(directory._list);
 		}
-		else if (usr_input == "EXIT")
+		else if (input == "EXIT")
 		{
 			std::cout << "Exit program. Sure hope you saved those contacts elsewhere!" << std::endl;
 			return (0);

@@ -2,6 +2,9 @@
 #include <string>
 #include <fstream>
 
+// Usage: ./a.out <filename> <string1> <string2>
+// Creates a new file <filename>.replace that replaces all string1 occurences by string2
+
 static void	replaceString(std::string& line, std::string s1, std::string s2)
 {
 	size_t	pos = 0;

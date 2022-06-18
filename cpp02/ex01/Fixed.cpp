@@ -12,14 +12,14 @@ Fixed::Fixed(void) : _fixedNumber(0)
 
 Fixed::Fixed(const int intNumber)
 {
-	_fixedNumber = intNumber << _bits;
+	this->_fixedNumber = intNumber << _bits;
 	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float floatNumber)
 {
 	int power = myPow(2, _bits);
-	_fixedNumber = roundf(floatNumber * power);
+	this->_fixedNumber = roundf(floatNumber * power);
 	std::cout << "Float constructor called" <<  std::endl;
 }
 
@@ -45,18 +45,17 @@ Fixed::~Fixed(void)
 /* --- OPERATOR OVERLOAD ---*/
 /****************************/
 
-Fixed& Fixed::operator =(const Fixed& fixed)
+Fixed& Fixed::operator=(const Fixed& fixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	_fixedNumber = fixed._fixedNumber;
+	this->_fixedNumber = fixed._fixedNumber;
 	return (*this);
 }
 
-std::ostream&	operator <<(std::ostream& oStream, const Fixed& toPrint)
+std::ostream&	operator<<(std::ostream& os, const Fixed& fixed)
 {
-	//do something with floats
-	oStream << toPrint.toFloat() << std::endl;
-	return (oStream);
+	os << fixed.toFloat() << std::endl;
+	return (os);
 } 
 
 /****************************/
@@ -75,13 +74,13 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	float power = myPow(2, _bits);
-	return ((_fixedNumber / power));
+	float power = myPow(2, this->_bits);
+	return ((this->_fixedNumber / power));
 }
 
 int		Fixed::toInt(void) const
 {
-	return (_fixedNumber >> _bits);
+	return (this->_fixedNumber >> this->_bits);
 }
 
 /****************************/

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 13 23:44:45 2022
+# Make data base, printed on Sat Jun 18 15:17:13 2022
 
 # Variables
 
@@ -27,7 +27,7 @@ VBOX_MSI_INSTALL_PATH = D:\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\Cyril Wastchenko\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-d6963859-337e-464e-8308-867f0c946cfb-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-d1fb22dd-7fae-4e1a-8bd1-881d118877a2-sock
 # environment
 VSCODE_CWD = C:\Users\Cyril Wastchenko\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -41,11 +41,12 @@ PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\Wi
 # default
 MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
-@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
+@D = $(patsubst %/,%,$(patsubst %\,%,$( 
+dir $@)))
 # environment
 DOKANLIBRARY1_LIBRARYPATH_X64 = C:\Program Files\Dokan\Dokan Library-1.4.1\lib\
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_10444_GJHMNPYVVZDJIJOD
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_10128_KZNWAVYOVQMOBJTU
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -60,8 +61,9 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
-# environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Cyril Wastchenko\AppData\Roaming\Code\CachedData\4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+# 
+ environment
+VSCODE_CODE_CACHE_PATH = C:\Users\Cyril Wastchenko\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LANG = C
 # default
@@ -81,9 +83,10 @@ CURDIR := d:/vsc_42cursus/c++
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-DOKANLIBRARY1_LIBRARYPATH_X86 = C:\Program Files\Dokan\Dokan Library-1.4.1\x86\lib\
+DOKANLIBRARY1_LI 
+BRARYPATH_X86 = C:\Program Files\Dokan\Dokan Library-1.4.1\x86\lib\
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
@@ -101,9 +104,10 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_VERBOSE_LOGGING = true
+VSCODE_VERBOSE 
+_LOGGING = true
 # environment
-VSCODE_PID = 10444
+VSCODE_PID = 10128
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -120,7 +124,8 @@ MAKE_HOST := Windows32
 ANDROID_HOME = C:\Users\Cyril Wastchenko\AppData\Local\Android\Sdk
 # environment
 PROGRAMDATA = C:\ProgramData
-# default
+#  
+default
 SHELL := sh.exe
 # environment
 CLASSPATH = .;
@@ -139,7 +144,9 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_211\bin;D:\nodejs\;C:\msys64\mingw64\bin;C:\Program Files\Git\cmd;C:\Users\Cyril Wastchenko\AppData\Local\Microsoft\WindowsApps;c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools;C:\Users\Cyril Wastchenko\AppData\Local\GitHubDesktop\bin;C:\Users\Cyril Wastchenko\AppData\Local\Microsoft\WindowsApps;C:\Users\Cyril Wastchenko\AppData\Roaming\npm;C:\Users\Cyril Wastchenko\AppData\Local\Programs\Microsoft VS Code\bin
+PATH = C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C: 
+\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_211\bin;D:\nodejs\;C:\msys64\mingw64\bin;C:\Program Files\Git\cmd;C:\Users\Cyril Wastchenko\AppData\Local\Microsoft\WindowsApps;c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools;C:\Users\Cyril Wastchenko\AppData\Local\GitHubDesktop\bin;C:\Users\Cyril Wastchenko\AppData\Local\Microsoft\WindowsApps;C:\Users\Cyril Wastchenko\AppData\Roaming\n 
+pm;C:\Users\Cyril Wastchenko\AppData\Local\Programs\Microsoft VS Code\bin
 # environment
 COMPUTERNAME = LAPTOP-5J89K4R6
 # default
@@ -161,7 +168,8 @@ COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
 # automatic
 ?F = $(notdir $?)
 # environment
-PROGRAMW6432 = C:\Program Files
+PROGRAMW 
+6432 = C:\Program Files
 # environment
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # automatic
@@ -183,8 +191,8 @@ MAKE_VERSION := 4.3
 # environment
 PLATFORMCODE = KV
 # environment
-PROGRAMFILES(X86) = C:\Program 
- Files (x86)
+PROGRAMFILES(X86) = C:\Program Fi 
+les (x86)
 # environment
 USERDOMAIN_ROAMINGPROFILE = LAPTOP-5J89K4R6
 # environment
@@ -204,9 +212,10 @@ COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-TEMP = C:\Users\CYRILW~1\AppData\Local\Temp
+TEMP = C:\Users\CY 
+RILW~1\AppData\Local\Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\a76266384f72284c200a7e89412d430e-1.68.0-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\a76266384f72284c200a7e89412d430e-1.68.1-main-sock
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -222,7 +231,8 @@ SESSIONNAME = Console
 # environment
 REGIONCODE = EMEA
 # environment
-PROCESSOR_REVISION = 9e09
+PRO 
+CESSOR_REVISION = 9e09
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
 # variable set hash-table stats:
@@ -246,7 +256,8 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
 
 # Not a target:
 Makefile:
-#  Implicit rule search has been done.
+#  Implicit rule s 
+earch has been done.
 #  File does not exist.
 #  File has been updated.
 #  Failed to be updated.
@@ -299,6 +310,6 @@ GNUmakefile:
 # strcache performance: lookups = 24 / hit rate = 12%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Mon Jun 13 23:44:45 2022
+# Finished Make data base on Sat Jun 18 15:17:13 2022
 
  

@@ -13,7 +13,7 @@ public:
 	Fixed(void); //Default constructor
 	Fixed(const Fixed& copy); //Copy constructor
 	~Fixed(void); //Deconstructor
-	Fixed&	operator =(const Fixed& fixed); //Overloaded assignment operator
+	Fixed&	operator=(const Fixed& fixed); //Overloaded assignment operator
 
 	Fixed(const int intNumber);
 	Fixed(const float floatNumber); 
@@ -25,6 +25,7 @@ public:
 	int		toInt(void) const;
 };
 
-std::ostream&	operator <<(std::ostream& oStream, const Fixed& valueToPrint);
+std::ostream&	operator<<(std::ostream& os, const Fixed& fixed);
 int	myPow(int base, int power);
+
 #endif

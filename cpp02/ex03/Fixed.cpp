@@ -7,22 +7,22 @@
 
 Fixed::Fixed(void) : _fixedNumber(0)
 {
-	if (_msg)
+	if (this->_msg)
 		std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int intNumber)
 {
-	_fixedNumber = intNumber << _bits;
-	if (_msg)
+	this->_fixedNumber = intNumber << this->_bits;
+	if (this->_msg)
 		std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float floatNumber)
 {
-	int power = pow(2, _bits);
-	_fixedNumber = roundf(floatNumber * power);
-	if (_msg)
+	int power = pow(2, this->_bits);
+	this->_fixedNumber = roundf(floatNumber * power);
+	if (this->_msg)
 		std::cout << "Float constructor called" <<  std::endl;
 }
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const float floatNumber)
 
 Fixed::Fixed(const Fixed& copy) : _fixedNumber(copy._fixedNumber)
 {
-	if (_msg)
+	if (this->_msg)
 		std::cout << "Copy constructor called" << std::endl;
 }
 
@@ -42,7 +42,7 @@ Fixed::Fixed(const Fixed& copy) : _fixedNumber(copy._fixedNumber)
 
 Fixed::~Fixed(void)
 {
-	if (_msg)
+	if (this->_msg)
 		std::cout << "Deconstructor called" << std::endl;
 }
 
@@ -50,26 +50,26 @@ Fixed::~Fixed(void)
 /* --- OPERATOR OVERLOAD ---*/
 /****************************/
 
-Fixed& Fixed::operator =(const Fixed& fixed)
+Fixed& Fixed::operator=(const Fixed& fixed)
 {
-	if (_msg)
+	if (this->_msg)
 		std::cout << "Copy assignment operator called" << std::endl;
-	_fixedNumber = fixed._fixedNumber;
+	this->_fixedNumber = fixed._fixedNumber;
 	return (*this);
 }
 
-const Fixed& Fixed::operator =(const Fixed& fixed) const
+const Fixed& Fixed::operator=(const Fixed& fixed) const
 {
-	if (_msg)
+	if (this->_msg)
 		std::cout << "Copy assignment operator called" << std::endl;
 	const_cast<Fixed*>(this)->_fixedNumber = fixed._fixedNumber;
 	return (*this);
 }
 
-std::ostream&	operator <<(std::ostream& oStream, const Fixed& toPrint)
+std::ostream&	operator<<(std::ostream& os, const Fixed& fixed)
 {
-	oStream << toPrint.toFloat() << std::endl;
-	return (oStream);
+	os << fixed.toFloat() << std::endl;
+	return (os);
 } 
 
 /****************************/
@@ -88,13 +88,13 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	float power = myPow(2, _bits);
-	return ((_fixedNumber / power));
+	float power = myPow(2, this->_bits);
+	return ((this->_fixedNumber / power));
 }
 
 int		Fixed::toInt(void) const
 {
-	return (_fixedNumber >> _bits);
+	return (this->_fixedNumber >> this->_bits);
 }
 
 Fixed	Fixed::min(Fixed& a, Fixed& b)

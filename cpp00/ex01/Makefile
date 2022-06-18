@@ -1,5 +1,5 @@
 NAME	=	MyDirectory
-SRCS	=	main.cpp Contact.class.cpp PhoneBook.class.cpp
+SRCS	=	main.cpp PhoneBook.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	= -Wall -Wextra -Werror -std=c++98 \
 

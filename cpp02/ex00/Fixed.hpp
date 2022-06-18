@@ -12,7 +12,7 @@ public:
 	Fixed(void); //Default constructor
 	Fixed(const Fixed& copy); //Copy constructor
 	~Fixed(void); //Deconstructor
-	Fixed&	operator= (const Fixed& fixed); //Overloaded assignment operator
+	Fixed&	operator=(const Fixed& fixed); //Overloaded assignment operator
 
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);

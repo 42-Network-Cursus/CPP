@@ -1,10 +1,10 @@
 #include "Zombie.hpp"
 
-Zombie*	newZombie(std::string _name)
+Zombie*	newZombie(std::string _nnameame)
 {
 	Zombie* ret;
 
 	ret = new Zombie;
-	ret->setName(_name);
+	ret->setName(name);
 	return (ret);
 }

@@ -6,6 +6,46 @@
 
 // Vector AB = (bx, by) - (ax, ay) 
 
+
+
+Point	getVector(Fixed x, Fixed y)
+{
+	Point ret(x.getRawBits(), y.getRawBits());
+	return (ret);
+}
+
+bool isPointOnLine(Point p, Point v1, Point v2)
+{
+    if (v2.getX() == 0) {
+        return p.getX() == v1.getX();
+    }
+    if (v2.getY() == 0) {
+        return p.getY() == v1.getY();
+    }
+    return (v1.getX() - p.getX()) / v1.getX() == (v1.getY() - p.getY()) / v2.getY(); 
+}
+
+bool bsp(Point const a, Point const b, Point const c, Point const p)
+{
+	//Using dotproduct between two vectors, resulting in a scalar value
+	Point	PA = getVector(p.getX() - a.getX(), p.getY() - a.getY());
+	Point	PB = getVector(p.getX() - b.getX(), p.getY() - b.getY());
+	Point	PC = getVector(p.getX() - c.getX(), p.getY() - c.getY());
+	Point	AB = getVector(a.getY() - b.getY(), b.getX() - a.getX());
+	Point	BC = getVector(b.getY() - c.getY(), c.getX() - b.getX());
+	Point	CA = getVector(c.getY() - a.getY(), a.getX() - c.getX());
+
+	bool b1 = ( PA * AB > 0);
+	bool b2 = ( PB * BC > 0);
+	bool b3 = ( PC * CA > 0);
+
+	if (isPointOnLine(p, a, AB) || isPointOnLine(p, b, BC) || isPointOnLine(p, c, CA))
+		return (false);
+	return (b1 == b2 && b2 == b3);
+}
+
+
+/*
 float	getAngleValue(Point& vA, Point& vB)
 {
 	float ret;
@@ -14,23 +54,39 @@ float	getAngleValue(Point& vA, Point& vB)
 	Fixed vBx = vB.getX();
 	Fixed vBy = vB.getY();
 
-	ret = acos((vAx * vBx + vAy * vBy) / (sqrt(pow(2, vAx.getRawBits) + pow(2, vAy.getRawBits)) * sqrt(pow(2, vBx.getRawBits) + pow(2, vBy.getRawBits))));
+	std::cout << "vAx = " << vAx;
+	std::cout << "vAy = " << vAy;
+	std::cout << "vBx = " << vBx;
+	std::cout << "vBy = " << vBy;
+
+
+	std::cout << "(vAx * vBx + vAy * vBy).getRawBits() = " << (vAx * vBx + vAy * vBy).getRawBits() << std::endl;
+	std::cout << "(pow(2, vAx.getRawBits()) = " << pow(2, vAx.getRawBits()) << std::endl;
+	std::cout << "pow(2, vAy.getRawBits()) = " << pow(2, vAy.getRawBits()) << std::endl;
+	std::cout << "pow(2, vBx.getRawBits() = " << pow(2, vBx.getRawBits()) << std::endl;
+	std::cout << " pow(2, vBy.getRawBits() = " << pow(2, vBy.getRawBits()) << std::endl;
+	std::cout << "(sqrt(pow(2, vAx.getRawBits()) + pow(2, vAy.getRawBits()) = " << (sqrt(pow(2, vAx.getRawBits()) + pow(2, vAy.getRawBits()))) << std::endl;
+	std::cout << "sqrt(pow(2, vBx.getRawBits()) + pow(2, vBy.getRawBits())))))" << sqrt(pow(2, vBx.getRawBits()) + pow(2, vBy.getRawBits())) << std::endl;
+	std::cout << "(sqrt(pow(2, vAx.getRawBits()) + pow(2, vAy.getRawBits()) * sqrt(pow(2, vBx.getRawBits()) + pow(2, vBy.getRawBits()))))) = " << (sqrt(pow(2, vAx.getRawBits()) + pow(2, vAy.getRawBits()) * sqrt(pow(2, vBx.getRawBits()) + pow(2, vBy.getRawBits())))) << std::endl;
+
+	ret = acos((vAx * vBx + vAy * vBy).getRawBits() / (sqrt(pow(2, vAx.getRawBits()) + pow(2, vAy.getRawBits()) * sqrt(pow(2, vBx.getRawBits()) + pow(2, vBy.getRawBits())))));
+	std::cout << "Angle value = " << ret << std::endl;
 	return (ret);
 }
 
-Point&	convertToVector(Point const a, Point const b)
+Point	convertToVector(Point const a, Point const b)
 {
-	Point ret;
-	Fixed ax(a.getX);
-	Fixed ay(a.getY);
-	Fixed bx(b.getX);
-	Fixed by(b.getY);
-	ret._x = bx - ax;
-	ret._y = by - ay;
+	Fixed ax(a.getX());
+	Fixed ay(a.getY());
+	Fixed bx(b.getX());
+	Fixed by(b.getY());
+	Fixed x(bx - ax);
+	Fixed y(by - ay);
+	Point ret(x.getRawBits(), y.getRawBits());
 	return (ret);
 }
 
-bool bsp(Point const a, Point const b, Point const c, Point const point);
+bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	Point vAB = convertToVector(a, b);
 	Point vBC = convertToVector(b, c);
@@ -42,51 +98,12 @@ bool bsp(Point const a, Point const b, Point const c, Point const point);
 	float angle1 = getAngleValue(vPA, vAB);
 	float angle2 = getAngleValue(vPB, vBC);
 	float angle3 = getAngleValue(vPC, vCA);
-	const float PI = 3.1415927
+	const float PI = 3.1415927;
 
+	std::cout << "Angles = " << angle1 + angle2 + angle3 << std::endl;
 	if ((angle1 + angle2 + angle3) == 2 * PI)
 		return true;
 	else
 		return false;
 }
-
-
-
-
-
-// int CrossProduct(Point& a, Point& b)
-// {
-// 	int ret;
-
-// 	ret = a.get_xValue() * b.get_yValue() - a.get_yValue() * a.get_xValue();
-// 	return (ret);
-// }
-
-// int	DotProduct(int cp1, int cp2)
-// {
-// 	if ((cp1 > 0 and cp2 > 0) or (cp1 < 0 and cp2 < 0))
-// 		return true;
-// 	else
-// 		return false;
-// }
-
-// bool SameSide(Point const p, Point const ref, Point const peak1, Point const peak2)
-// {
-//     cp1 = CrossProduct(peak2 - peak1, p - peak1)
-//     cp2 = CrossProduct(peak2 - peak1, ref - peak1)
-//     return (DotProduct(cp1, cp2));
-// }
-
-// function PointInTriangle(p, a,b,c)
-//     if SameSide(p,a, b,c) and SameSide(p,b, a,c)
-//         and SameSide(p,c, a,b) then return true
-//     else return false
-
-// bool bsp(Point const a, Point const b, Point const c, Point const point);
-// {
-// 	if (SameSide(point, a, b, c) and SameSide(point, b, a, c)
-// 		and SameSide(point , c, a, b))
-// 		return true
-//     else 
-// 		return false
-// }
+*/

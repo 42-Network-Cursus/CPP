@@ -18,10 +18,10 @@ public:
 	const Fixed& getX() const;
 	const Fixed& getY() const;
 
-
+	float	operator*(Point const& point) const;
 };
 
-std::ostream&	operator <<(std::ostream& oStream, Point const& point);
+std::ostream&	operator<<(std::ostream& os, Point const& point);
 bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
