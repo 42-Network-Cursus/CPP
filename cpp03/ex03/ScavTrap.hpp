@@ -3,7 +3,7 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ScavTrap: virtual public ClapTrap
 {
 private:
 	bool	_guardMode = false;
@@ -22,6 +22,10 @@ public:
 	int&		getHitPoints(void);
 	int&		getEnergyPoints(void);
 	int&		getAttackDamage(void);
+
+	void	setHitPoints(int hitPoints);
+	void	setEnergyPoints(int energyPoints);
+	void	setAttackDamage(int attackDamage);
 };
 
 #endif

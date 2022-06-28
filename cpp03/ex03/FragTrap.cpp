@@ -68,3 +68,22 @@ int&	FragTrap::getAttackDamage(void)
 {
 	return(ClapTrap::getAttackDamage());
 }
+
+/******************/
+/* --- SETTERS ---*/
+/******************/
+
+void	FragTrap::setHitPoints(int hitPoints)
+{
+	this->_hitPoints = ClapTrap::setHitPoints(hitPoints);
+}
+
+void	FragTrap::setEnergyPoints(int energyPoints)
+{
+	this->_energyPoints = ClapTrap::setEnergyPoints(energyPoints);
+}
+
+void	FragTrap::setAttackDamage(int attackDamage)
+{
+	this->_attackDamage = setAttackDamage(attackDamage);
+}

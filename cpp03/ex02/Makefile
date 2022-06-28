@@ -1,5 +1,5 @@
-NAME	=	ex02
-SRCS	=	tests.cpp Account.cpp
+NAME	=	ex01
+SRCS	=	main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 CC		=	c++

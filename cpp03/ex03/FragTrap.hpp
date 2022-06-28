@@ -3,7 +3,7 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
 private:
 	bool	_announceConstruct = true; // True for construct msgs
@@ -20,6 +20,10 @@ public:
 	int&		getHitPoints(void);
 	int&		getEnergyPoints(void);
 	int&		getAttackDamage(void);
+
+	void	setHitPoints(int hitPoints);
+	void	setEnergyPoints(int energyPoints);
+	void	setAttackDamage(int attackDamage);
 };
 
 #endif

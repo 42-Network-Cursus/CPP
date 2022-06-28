@@ -108,3 +108,22 @@ int&	ScavTrap::getAttackDamage(void)
 {
 	return(ClapTrap::getAttackDamage());
 }
+
+/******************/
+/* --- SETTERS ---*/
+/******************/
+
+void	ScavTrap::setHitPoints(int hitPoints)
+{
+	this->_hitPoints = ClapTrap::setHitPoints(hitPoints);
+}
+
+void	ScavTrap::setEnergyPoints(int energyPoints)
+{
+	this->_energyPoints = ClapTrap::setEnergyPoints(energyPoints);
+}
+
+void	ScavTrap::setAttackDamage(int attackDamage)
+{
+	this->_attackDamage = setAttackDamage(attackDamage);
+}

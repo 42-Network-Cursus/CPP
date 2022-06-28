@@ -16,6 +16,7 @@ public:
 	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap& copy);
+	ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
 	~ClapTrap();
 	ClapTrap& operator=(const ClapTrap& clapTrap);
 
@@ -24,6 +25,18 @@ public:
 	void beRepaired(unsigned int amount);
 
 	void	useEnergyPoint(int& energyPoints);
+
+	//Getters
+	std::string	getName() const;
+	int&	getHitPoints();
+	int&	getEnergyPoints();
+	int&	getAttackDamage();
+
+	//Setters
+	void	setName(std::string name);
+	void	setHitPoints(int hitPoints);
+	void	setEnergyPoints(int energyPoints);
+	void	setAttackDamage(int attackDamage);
 };
 
 #endif
