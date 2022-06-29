@@ -7,6 +7,14 @@ class Animal
 {
 protected:
 	std::string	type;
+public:
+	Animal();
+	~Animal();
+	Animal(const Animal& Animal);
+	Animal& operator=(const Animal& Animal);
+
+	void	makeSound() const;
+	std::string	getType() const;
 };
 
 #endif
