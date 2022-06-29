@@ -1,39 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 15:44:37 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 15:51:03 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
+#include <string>
+#include <iostream>
 
 /*********************/
 /* --- CONSTRUCT --- */
 /*********************/
 
-FragTrap::FragTrap(void) : ClapTrap("Unnamed FragTrap", 100, 100, 30)
+FragTrap::FragTrap(void)
 {
-	this->_announceConstruct = true;
-	if (this->_announceConstruct)
-		std::cout << "* FragTrap default constructor called *" << std::endl;
+	this->_name = "Unnamed FragTrap";
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
+	announce("* FragTrap default constructor called *");
 }
 
-FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy.getName(), 100, 100, 30)
+FragTrap::FragTrap(const FragTrap& copy)
 {
-	if (this->_announceConstruct)
-		std::cout << "* FragTrap copy constructor called *" << std::endl;
+	*this = copy;
+	announce("* FragTrap copy constructor called *");
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30)
+FragTrap::FragTrap(std::string name)
 {
-	this->_announceConstruct = true;
-	if (this->_announceConstruct)
-		std::cout << "* FragTrap name constructor called *" << std::endl;
+	this->_name = name;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
+	announce("* FragTrap name constructor called *");
 }
 
 FragTrap::~FragTrap(void)
 {
-	if (this->_announceConstruct)
-		std::cout << "* FragTrap deconstructor called for " << getName() << "*" << std::endl;
+	announce("* FragTrap deconstructor called *");
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& FragTrap)
 {
-	if (this->_announceConstruct)
-		std::cout << "* FragTrap Assignment operator called *" << std::endl;
+	announce("* FragTrap Assignment operator called *");
 	ClapTrap::operator=(FragTrap);
 	return (*this);
 }
@@ -44,29 +60,5 @@ FragTrap&	FragTrap::operator=(const FragTrap& FragTrap)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << getName() << " would like to high five you. In the face. If that's okay with you of course :)." << std::endl;
-}
-
-/******************/
-/* --- GETTERS ---*/
-/******************/
-
-std::string	FragTrap::getName() const
-{
-	return (ClapTrap::getName());
-}
-
-int&	FragTrap::getHitPoints(void)
-{
-	return (ClapTrap::getHitPoints());
-}
-
-int&	FragTrap::getEnergyPoints(void)
-{
-	return (ClapTrap::getEnergyPoints());
-}
-
-int&	FragTrap::getAttackDamage(void)
-{
-	return(ClapTrap::getAttackDamage());
+	std::cout << this->_name << " would like to high five you. In the face. If that's okay with you of course :)." << std::endl;
 }

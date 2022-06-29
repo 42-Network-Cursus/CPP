@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 15:55:11 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 15:55:17 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
 # include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
+# include <string>
 
 class DiamondTrap: public ScavTrap, public FragTrap
 {
 private:
-	bool		_announceConstruct;
 	std::string _name;
 public:
 	DiamondTrap(void);
@@ -19,17 +31,6 @@ public:
 
 	void	whoAmI();
 	void	attack(std::string target);
-
-	std::string	getName();
-	std::string	getClapName() const;
-	int&		getHitPoints(void);
-	int&		getEnergyPoints(void);
-	int&		getAttackDamage(void);
-
-	void	setName(std::string name);
-	void	setHitPoints(int hitPoints);
-	void	setEnergyPoints(int energyPoints);
-	void	setAttackDamage(int attackDamage);
 };
 
 #endif

@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 14:38:31 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 14:40:57 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
+#include <iostream>
 
 int main()
 {
@@ -10,10 +23,13 @@ int main()
 		ClapTrap trap("Trappy");
 		ClapTrap copy;
 
+		std::cout << std::endl;
 		for (int i = 0; i < 5; i++)
 			trap.attack("Jeff");
 		
 		copy = trap;
+		
+		std::cout << std::endl;
 		for (int i = 0; i < 6; i++)
 			copy.attack("Alfred");
 	}
@@ -24,6 +40,7 @@ int main()
 
 		ClapTrap trap;
 
+		std::cout << std::endl;
 		for (int i = 0; i <= 4; i++)
 		{
 			trap.attack("Jeff");
@@ -37,6 +54,7 @@ int main()
 
 		ClapTrap trap("HealBot");
 
+		std::cout << std::endl;
 		for (int i = 0; i <= 3; i++)
 		{
 			trap.takeDamage(4);

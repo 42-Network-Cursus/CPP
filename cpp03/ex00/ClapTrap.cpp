@@ -1,4 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 14:23:46 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 15:51:24 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
+#include <iostream>
+#include <string>
 
 /*********************/
 /* --- CONSTRUCT --- */
@@ -6,14 +20,11 @@
 
 ClapTrap::ClapTrap()
 {
-	this->_announceConstruct = true; // True for construct msgs
-
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
 	this->_name = "Unnamed trap";
-	if (this->_announceConstruct)
-		std::cout << "* Default constructor called *" << std::endl;
+	announce("* Default ClapTrap constructor called *");
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -22,26 +33,23 @@ ClapTrap::ClapTrap(std::string name)
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
 	this->_name = name;
-	if (this->_announceConstruct)
-		std::cout << "* Name constructor called *" << std::endl;
+	announce("* Name ClapTrap constructor called *");
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
 {
-	if (this->_announceConstruct)
-		std::cout << "* Copy constructor called *" << std::endl;
+	*this = copy;
+	announce("* Copy ClapTrap constructor called *");
 }
 
 ClapTrap::~ClapTrap()
 {
-	if (this->_announceConstruct)
-		std::cout << "* Deconstructor called for " << this->_name << "*" << std::endl;
+	announce("* ClapTrap Deconstructor called *");
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& clapTrap)
 {
-	if (this->_announceConstruct)
-		std::cout << "* Assignment operator called *" << std::endl;
+	announce("* ClapTrap Assignment operator called *");
 	this->_name = clapTrap._name;
 	this->_hitPoints = clapTrap._hitPoints;
 	this->_energyPoints = clapTrap._energyPoints;
@@ -105,4 +113,13 @@ void	ClapTrap::useEnergyPoint(int& energyPoints)
 {
 	energyPoints = energyPoints - 1;
 	std::cout << "Energy points left: " << energyPoints << std::endl << std::endl;
+}
+
+/** ANNOUNCE CONSTRUCT **/
+
+void	announce(std::string message)
+{
+	#ifdef ANNOUNCE
+		std::cout << message << std::endl;
+	#endif
 }
