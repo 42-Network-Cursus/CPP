@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun 28 13:42:13 2022
+# Make data base, printed on Tue Jun 28 22:01:01 2022
 
 # Variables
 
@@ -27,7 +27,7 @@ VBOX_MSI_INSTALL_PATH = D:\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\Cyril Wastchenko\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-bd2aa364-e3a8-4b7a-b53c-47a8fdf90970-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-dd0f8a83-b8bd-47b4-bf55-3ae81648bc4d-sock
 # environment
 VSCODE_CWD = C:\Users\Cyril Wastchenko\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -41,12 +41,11 @@ PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\Wi
 # default
 MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
-@D = $(patsubst %/,%,$(patsubst %\,%,$( 
-dir $@)))
+@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
 DOKANLIBRARY1_LIBRARYPATH_X64 = C:\Program Files\Dokan\Dokan Library-1.4.1\lib\
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9080_OAHXOOSMWZGACDZF
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_10928_VZWTBCBMDPQKFVPY
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -82,8 +81,7 @@ CURDIR := d:/vsc_42cursus/c++
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-DOKANLIBRARY1_LIB 
-RARYPATH_X86 = C:\Program Files\Dokan\Dokan Library-1.4.1\x86\lib\
+DOKANLIBRARY1_LIBRARYPATH_X86 = C:\Program Files\Dokan\Dokan Library-1.4.1\x86\lib\
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
@@ -105,7 +103,7 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 9080
+VSCODE_PID = 10928
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -294,13 +292,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 15 
-6 B / avg = 7 B
+# strcache buffers: 1 (0) / strings = 21 / storage = 156 B / avg = 7 B
 # current buf: size = 8174 B / used = 156 B / count = 21 / avg = 7 B
 
 # strcache performance: lookups = 24 / hit rate = 12%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Tue Jun 28 13:42:13 2022
+# Finished Make data base on Tue Jun 28 22:01:01 2022
 
  
