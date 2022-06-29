@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 13:25:33 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 13:31:25 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 /***********************/
 /* --- CONSTRUCTORS ---*/
@@ -7,23 +20,26 @@
 
 Fixed::Fixed(void) : _fixedNumber(0)
 {
-	if (this->_msg)
+	#ifdef ANNOUNCE
 		std::cout << "Default constructor called" << std::endl;
+	#endif
 }
 
 Fixed::Fixed(const int intNumber)
 {
 	this->_fixedNumber = intNumber << this->_bits;
-	if (this->_msg)
+	#ifdef ANNOUNCE
 		std::cout << "Int constructor called" << std::endl;
+	#endif
 }
 
 Fixed::Fixed(const float floatNumber)
 {
 	int power = pow(2, this->_bits);
 	this->_fixedNumber = roundf(floatNumber * power);
-	if (this->_msg)
+	#ifdef ANNOUNCE
 		std::cout << "Float constructor called" <<  std::endl;
+	#endif
 }
 
 /***************************/
@@ -32,8 +48,9 @@ Fixed::Fixed(const float floatNumber)
 
 Fixed::Fixed(const Fixed& copy) : _fixedNumber(copy._fixedNumber)
 {
-	if (this->_msg)
+	#ifdef ANNOUNCE
 		std::cout << "Copy constructor called" << std::endl;
+	#endif
 }
 
 /************************/
@@ -42,8 +59,9 @@ Fixed::Fixed(const Fixed& copy) : _fixedNumber(copy._fixedNumber)
 
 Fixed::~Fixed(void)
 {
-	if (this->_msg)
+	#ifdef ANNOUNCE
 		std::cout << "Deconstructor called" << std::endl;
+	#endif
 }
 
 /****************************/
@@ -52,8 +70,9 @@ Fixed::~Fixed(void)
 
 Fixed& Fixed::operator=(const Fixed& fixed)
 {
-	if (this->_msg)
+	#ifdef ANNOUNCE
 		std::cout << "Copy assignment operator called" << std::endl;
+	#endif
 	this->_fixedNumber = fixed._fixedNumber;
 	return (*this);
 }

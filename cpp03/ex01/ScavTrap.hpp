@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 15:37:11 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 15:37:21 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
+# include <string>
 
 class ScavTrap: public ClapTrap
 {
 private:
-	bool	_guardMode = false;
-	bool	_announceConstruct = true; // True for construct msgs
+	bool	_guardMode;
 public:
 	ScavTrap(void);
 	ScavTrap(const ScavTrap& copy);
@@ -17,11 +29,6 @@ public:
 
 	void 	attack(const std::string& target);
 	void	guardGate();
-
-	std::string	getName() const;
-	int&		getHitPoints(void);
-	int&		getEnergyPoints(void);
-	int&		getAttackDamage(void);
 };
 
 #endif

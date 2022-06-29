@@ -1,4 +1,16 @@
-NAME	=	BraiiiiiiinnnzzzZ
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/06/29 11:51:11 by cwastche          #+#    #+#              #
+#    Updated: 2022/06/29 11:51:14 by cwastche         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME	=	ex00
 SRCS	=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 15:55:27 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 15:55:28 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "DiamondTrap.hpp"
+#include <iostream>
 
 int main()
 {
@@ -10,6 +23,7 @@ int main()
 		DiamondTrap trap("Trappy");
 		DiamondTrap copy;
 
+		std::cout << std::endl;
 		for (int i = 0; i < 3; i++)
 			trap.attack("Jeff");
 

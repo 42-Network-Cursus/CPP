@@ -1,4 +1,16 @@
-NAME	=	BSP
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/06/29 13:37:48 by cwastche          #+#    #+#              #
+#    Updated: 2022/06/29 13:37:53 by cwastche         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME	=	ex03
 SRCS	=	main.cpp Fixed.cpp FixedOperatorsOverload.cpp Point.cpp bsp.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

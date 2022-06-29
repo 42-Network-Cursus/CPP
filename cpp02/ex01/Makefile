@@ -1,4 +1,16 @@
-NAME	=	Mon_premier_canon
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/06/29 13:25:04 by cwastche          #+#    #+#              #
+#    Updated: 2022/06/29 13:25:07 by cwastche         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME	=	ex01
 SRCS	=	main.cpp Fixed.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

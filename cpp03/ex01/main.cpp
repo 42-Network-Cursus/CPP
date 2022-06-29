@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 15:37:05 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 15:37:42 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
+#include <iostream>
 
 int main()
 {
@@ -18,6 +31,7 @@ int main()
 			copy.attack("Alfred");
 	}
 	{
+		std::cout << std::endl;
 		std::cout << "-------------------" << std::endl;
 		std::cout << "--- TAKE DAMAGE ---" << std::endl;
 		std::cout << "-------------------" << std::endl;
@@ -31,6 +45,7 @@ int main()
 		}
 	}
 	{
+		std::cout << std::endl;
 		std::cout << "--------------" << std::endl;
 		std::cout << "--- REPAIR ---" << std::endl;
 		std::cout << "--------------" << std::endl;
@@ -44,6 +59,7 @@ int main()
 		}
 	}
 	{
+		std::cout << std::endl;
 		std::cout << "------------------" << std::endl;
 		std::cout << "--- GUARD GATE ---" << std::endl;
 		std::cout << "------------------" << std::endl;
