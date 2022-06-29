@@ -10,6 +10,7 @@ int main()
 		DiamondTrap trap("Trappy");
 		DiamondTrap copy;
 
+		std::cout << std::endl;
 		for (int i = 0; i < 3; i++)
 			trap.attack("Jeff");
 

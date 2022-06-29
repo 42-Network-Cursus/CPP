@@ -1,9 +1,7 @@
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
-# include <string>
-# include <iostream>
-# include <new>
+#include <string>
 
 class Zombie
 {

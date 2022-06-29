@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 12:00:36 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 12:00:43 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HUMANB_HPP
 # define HUMANB_HPP
 
 # include "Weapon.hpp"
 # include <string>
-# include <iostream>
 
 class HumanB
 {

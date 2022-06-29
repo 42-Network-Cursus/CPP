@@ -6,8 +6,8 @@
 class ScavTrap: virtual public ClapTrap
 {
 private:
-	bool	_guardMode = false;
-	bool	_announceConstruct = true; // True for construct msgs
+	bool	_guardMode;
+	bool	_announceConstruct;
 public:
 	ScavTrap(void);
 	ScavTrap(const ScavTrap& copy);
@@ -18,11 +18,12 @@ public:
 	void 	attack(const std::string& target);
 	void	guardGate();
 
-	std::string	getName() const;
+	std::string	getName(void) const;
 	int&		getHitPoints(void);
 	int&		getEnergyPoints(void);
 	int&		getAttackDamage(void);
 
+	void	setName(std::string name);
 	void	setHitPoints(int hitPoints);
 	void	setEnergyPoints(int energyPoints);
 	void	setAttackDamage(int attackDamage);

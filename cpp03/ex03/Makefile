@@ -1,4 +1,4 @@
-NAME	=	ex01
+NAME	=	ex03
 SRCS	=	main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wshadow

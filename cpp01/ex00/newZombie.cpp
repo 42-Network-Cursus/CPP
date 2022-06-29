@@ -1,6 +1,20 @@
-#include "Zombie.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 11:51:17 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 11:53:05 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-Zombie*	newZombie(std::string _nnameame)
+#include "Zombie.hpp"
+#include <new>
+#include <string>
+
+Zombie*	newZombie(std::string name)
 {
 	Zombie* ret;
 

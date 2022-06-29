@@ -6,12 +6,16 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap("Unnamed scavTrap", 100, 50, 20)
 {
+	this->_guardMode = false;
+	this->_announceConstruct = true;
 	if (this->_announceConstruct)
 		std::cout << "* ScavTrap default constructor called *" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy.getName(), 100, 50, 20)
 {
+	this->_guardMode = false;
+	this->_announceConstruct = true;
 	if (this->_announceConstruct)
 		std::cout << "* ScavTrap copy constructor called *" << std::endl;
 }

@@ -6,8 +6,8 @@
 class ScavTrap: public ClapTrap
 {
 private:
-	bool	_guardMode = false;
-	bool	_announceConstruct = true; // True for construct msgs
+	bool	_guardMode;
+	bool	_announceConstruct;
 public:
 	ScavTrap(void);
 	ScavTrap(const ScavTrap& copy);

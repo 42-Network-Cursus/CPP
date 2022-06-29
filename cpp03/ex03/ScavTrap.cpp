@@ -4,8 +4,14 @@
 /* --- CONSTRUCT --- */
 /*********************/
 
-ScavTrap::ScavTrap(void) : ClapTrap("Unnamed scavTrap", 100, 50, 20)
+ScavTrap::ScavTrap(void)
 {
+	setName("Unnamed scavTrap");
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAttackDamage(20);
+	this->_guardMode = false;
+	this->_announceConstruct = true;
 	if (this->_announceConstruct)
 		std::cout << "* ScavTrap default constructor called *" << std::endl;
 }
@@ -16,8 +22,14 @@ ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy.getName(), 100, 50, 20)
 		std::cout << "* ScavTrap copy constructor called *" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
+ScavTrap::ScavTrap(std::string name)
 {
+	setName(name);
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAttackDamage(20);
+	this->_guardMode = false;
+	this->_announceConstruct = true;
 	if (this->_announceConstruct)
 		std::cout << "* ScavTrap name constructor called *" << std::endl;
 }
@@ -113,17 +125,22 @@ int&	ScavTrap::getAttackDamage(void)
 /* --- SETTERS ---*/
 /******************/
 
+void	ScavTrap::setName(std::string name)
+{
+	ClapTrap::setName(name);
+}
+
 void	ScavTrap::setHitPoints(int hitPoints)
 {
-	this->_hitPoints = ClapTrap::setHitPoints(hitPoints);
+	ClapTrap::setHitPoints(hitPoints);
 }
 
 void	ScavTrap::setEnergyPoints(int energyPoints)
 {
-	this->_energyPoints = ClapTrap::setEnergyPoints(energyPoints);
+	ClapTrap::setEnergyPoints(energyPoints);
 }
 
 void	ScavTrap::setAttackDamage(int attackDamage)
 {
-	this->_attackDamage = setAttackDamage(attackDamage);
+	ClapTrap::setAttackDamage(attackDamage);
 }

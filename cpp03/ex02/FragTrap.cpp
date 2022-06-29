@@ -6,6 +6,7 @@
 
 FragTrap::FragTrap(void) : ClapTrap("Unnamed FragTrap", 100, 100, 30)
 {
+	this->_announceConstruct = true;
 	if (this->_announceConstruct)
 		std::cout << "* FragTrap default constructor called *" << std::endl;
 }
@@ -18,6 +19,7 @@ FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy.getName(), 100, 100, 30
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30)
 {
+	this->_announceConstruct = true;
 	if (this->_announceConstruct)
 		std::cout << "* FragTrap name constructor called *" << std::endl;
 }

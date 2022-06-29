@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 11:47:18 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 11:47:19 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
 # include "Contact.hpp"
-# include <iostream>
-# include <string>
 
 class PhoneBook 
 {

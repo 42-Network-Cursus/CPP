@@ -4,36 +4,40 @@
 /* --- CONSTRUCT --- */
 /*********************/
 
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(void) : ClapTrap("UnnamedTrap", 500, 500, 500)
 {
+	
+	this->_announceConstruct = true; // True for construct msgs
 	if (this->_announceConstruct)
 		std::cout << "* DiamondTrap default constructor called *" << std::endl;
 	std::string name = "UnnamedTrap";
 	std::string clapSuffix = "_clap_name";
 	setName(name + clapSuffix);
-	this->_name = "UnnamedTrap";
-	this->_hitPoints = FragTrap::getHitPoints();
-	this->_energyPoints = ScavTrap::getEnergyPoints();
-	this->_attackDamage = FragTrap::getAttackDamage();
+	// this->_name = "UnnamedTrap";
+	// setHitPoints( FragTrap::getHitPoints() );
+	// setEnergyPoints( ScavTrap::getEnergyPoints() );
+	// setAttackDamage( FragTrap::getAttackDamage() );
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& copy)
 {
 	if (this->_announceConstruct)
 		std::cout << "* DiamondTrap copy constructor called *" << std::endl;
-	*this = copy
+	*this = copy;
 }
 
-DiamondTrap::DiamondTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name, 500, 500, 500)
 {
+	
+	this->_announceConstruct = true;
 	if (this->_announceConstruct)
 		std::cout << "* DiamondTrap name constructor called *" << std::endl;
 	std::string clapSuffix = "_clap_name";
 	setName(name + clapSuffix);
-	this->_name = name;
-	this->_hitPoints = FragTrap::getHitPoints();
-	this->_energyPoints = ScavTrap::getEnergyPoints();
-	this->_attackDamage = FragTrap::getAttackDamage();
+	// this->_name = name;
+	// setHitPoints( FragTrap::getHitPoints() );
+	// setEnergyPoints( ScavTrap::getEnergyPoints() );
+	// setAttackDamage( FragTrap::getAttackDamage() );
 }
 
 DiamondTrap::~DiamondTrap(void)
@@ -56,7 +60,7 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& DiamondTrap)
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "I am " << this->_name << " and my clap name is " << ClapTrap::_name << std::endl;
+	std::cout << "I am " << getName() << " and my clap name is " << getClapName() << std::endl;
 }
 
 void	DiamondTrap::attack(std::string target)
@@ -68,7 +72,12 @@ void	DiamondTrap::attack(std::string target)
 /* --- GETTERS ---*/
 /******************/
 
-std::string	DiamondTrap::getName() const
+std::string	DiamondTrap::getName()
+{
+	return (this->_name);
+}
+
+std::string	DiamondTrap::getClapName() const
 {
 	return (ClapTrap::getName());
 }
@@ -97,17 +106,17 @@ void	DiamondTrap::setName(std::string name)
 	ClapTrap::setName(name);
 }
 
-void	setHitPoints(int hitPoints)
+void	DiamondTrap::setHitPoints(int hitPoints)
 {
-	setHitPoints() frag
+	ClapTrap::setHitPoints(hitPoints);
 }
 
-void	setEnergyPoints(int energyPoints)
+void	DiamondTrap::setEnergyPoints(int energyPoints)
 {
-
+	ClapTrap::setEnergyPoints(energyPoints);
 }
 
-void	setAttackDamage(int attackDamage)
+void	DiamondTrap::setAttackDamage(int attackDamage)
 {
-	frag
+	ClapTrap::setAttackDamage(attackDamage);
 }

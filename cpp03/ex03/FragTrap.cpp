@@ -4,20 +4,30 @@
 /* --- CONSTRUCT --- */
 /*********************/
 
-FragTrap::FragTrap(void) : ClapTrap("Unnamed FragTrap", 100, 100, 30)
+FragTrap::FragTrap(void)
 {
+	setName("Unnamed FragTrap");
+	setHitPoints(100);
+	setEnergyPoints(100);
+	setAttackDamage(30);
+	this->_announceConstruct = true;
 	if (this->_announceConstruct)
 		std::cout << "* FragTrap default constructor called *" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy.getName(), 100, 100, 30)
 {
+	this->_announceConstruct = true;
 	if (this->_announceConstruct)
 		std::cout << "* FragTrap copy constructor called *" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30)
 {
+	setName(name);
+	setHitPoints(100);
+	setEnergyPoints(100);
+	setAttackDamage(30);
 	if (this->_announceConstruct)
 		std::cout << "* FragTrap name constructor called *" << std::endl;
 }
@@ -75,15 +85,15 @@ int&	FragTrap::getAttackDamage(void)
 
 void	FragTrap::setHitPoints(int hitPoints)
 {
-	this->_hitPoints = ClapTrap::setHitPoints(hitPoints);
+	ClapTrap::setHitPoints(hitPoints);
 }
 
 void	FragTrap::setEnergyPoints(int energyPoints)
 {
-	this->_energyPoints = ClapTrap::setEnergyPoints(energyPoints);
+	ClapTrap::setEnergyPoints(energyPoints);
 }
 
 void	FragTrap::setAttackDamage(int attackDamage)
 {
-	this->_attackDamage = setAttackDamage(attackDamage);
+	ClapTrap::setAttackDamage(attackDamage);
 }

@@ -6,6 +6,11 @@
 
 ClapTrap::ClapTrap()
 {
+	this->_announceConstruct = true; // True for construct msgs
+
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 	this->_name = "Unnamed trap";
 	if (this->_announceConstruct)
 		std::cout << "* ClapTrap default constructor called *" << std::endl;
@@ -13,6 +18,9 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 	this->_name = name;
 	if (this->_announceConstruct)
 		std::cout << "* ClapTrap name constructor called *" << std::endl;

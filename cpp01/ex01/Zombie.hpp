@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 11:54:53 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 11:55:35 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
 # include <string>
-# include <iostream>
-# include <new>
 
 class Zombie
 {
@@ -19,6 +29,6 @@ public:
 	std::string	getName(void);
 };
 
-Zombie*	zombieHorde(int N, std::string _name);
+Zombie*	zombieHorde(int N, std::string name);
 
 #endif

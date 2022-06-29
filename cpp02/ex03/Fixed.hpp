@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 13:35:40 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 13:41:05 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
 # include <iostream>
-# include <cmath>
+
+//#define ANNOUNCE //Comment line to remove constuction announcements
 
 class Fixed
 {
 private:
 	int					_fixedNumber;
 	const static int	_bits = 8;
-	bool				_msg = false; // Set to True for Construct && deconstruct msg
 public:
 	Fixed(void); //Default constructor
 	Fixed(const Fixed& copy); //Copy constructor

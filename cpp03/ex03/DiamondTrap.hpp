@@ -5,10 +5,10 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap: public FragTrap, public ScavTrap
+class DiamondTrap: public ScavTrap, public FragTrap
 {
 private:
-	bool		_announceConstruct = true; // True for construct msgs
+	bool		_announceConstruct;
 	std::string _name;
 public:
 	DiamondTrap(void);
@@ -20,10 +20,16 @@ public:
 	void	whoAmI();
 	void	attack(std::string target);
 
-	std::string	getName() const;
+	std::string	getName();
+	std::string	getClapName() const;
 	int&		getHitPoints(void);
 	int&		getEnergyPoints(void);
 	int&		getAttackDamage(void);
+
+	void	setName(std::string name);
+	void	setHitPoints(int hitPoints);
+	void	setEnergyPoints(int energyPoints);
+	void	setAttackDamage(int attackDamage);
 };
 
 #endif

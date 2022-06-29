@@ -6,7 +6,7 @@
 class FragTrap: public ClapTrap
 {
 private:
-	bool	_announceConstruct = true; // True for construct msgs
+	bool	_announceConstruct;
 public:
 	FragTrap(void);
 	FragTrap(const FragTrap& copy);

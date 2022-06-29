@@ -8,10 +8,10 @@ class ClapTrap
 {
 private:
 	std::string	_name;
-	int			_hitPoints = 10;
-	int			_energyPoints = 10;
-	int			_attackDamage = 0;
-	bool		_announceConstruct = true; // True for construct msgs  
+	int			_hitPoints;
+	int			_energyPoints;
+	int			_attackDamage;
+	bool		_announceConstruct;
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
