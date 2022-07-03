@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwastche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/29 11:47:18 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 11:47:19 by cwastche         ###   ########.fr       */
+/*   Created: 2022/06/29 11:46:38 by cwastche          #+#    #+#             */
+/*   Updated: 2022/06/29 11:46:40 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-# include "Contact.hpp"
+# include <string>
 
-class PhoneBook 
+class Contact 
 {
 public:
-	Contact _list[8];
-
-	void	addContact(Contact *list);
-	void	searchContact(Contact *list);
+	std::string	firstName;
+	std::string	lastName;
+	std::string	nickname;
+	std::string	darkestSecret;
+	std::string phoneNumber;
 };
 
 #endif

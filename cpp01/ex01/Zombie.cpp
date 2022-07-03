@@ -16,7 +16,7 @@
 
 Zombie::Zombie(void)
 {
-
+	// Constructor
 }
 
 Zombie::~Zombie(void)

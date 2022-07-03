@@ -1,7 +1,7 @@
-NAME	=	ex00
-SRCS	=	Cat.cpp Dog.cpp main.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+NAME	=	ex02
+SRCS	=	Cat.cpp Dog.cpp main.cpp AAnimal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJS	=	$(SRCS:.cpp=.o)
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 
 CC		=	c++
 RM		=	rm -rf
 

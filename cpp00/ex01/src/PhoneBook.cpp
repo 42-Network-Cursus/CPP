@@ -14,9 +14,7 @@
 #include <iostream>
 #include <string>
 
-/*****************/
 /* addContact */
-/*****************/
 
 static void	fillContactInfo(std::string msg, std::string *str)
 {
@@ -35,27 +33,25 @@ void	PhoneBook::addContact(Contact *list)
 
 	if (i > 7)
 		i = 0;
-	fillContactInfo("First name ?", &list[i]._firstName);
-	fillContactInfo("Last name ?", &list[i]._lastName);
-	fillContactInfo("Nickname ?", &list[i]._nickname);
-	fillContactInfo("Phone number ?", &list[i]._phoneNumber);
-	fillContactInfo("Darkest secret ?", &list[i]._darkestSecret);
+	fillContactInfo("First name ?", &list[i].firstName);
+	fillContactInfo("Last name ?", &list[i].lastName);
+	fillContactInfo("Nickname ?", &list[i].nickname);
+	fillContactInfo("Phone number ?", &list[i].phoneNumber);
+	fillContactInfo("Darkest secret ?", &list[i].darkestSecret);
 	i++;
 }
 
-/*****************/
 /* searchContact */
-/*****************/
 
 static void	printContactDetails(Contact *list, int index)
 {
 	int i = index;
 
-	std:: cout << "First name: " << list[i]._firstName << std::endl;
-	std:: cout << "Last name: " << list[i]._lastName << std::endl;
-	std:: cout << "Nickname: " << list[i]._nickname << std::endl;
-	std:: cout << "Phone number: " << list[i]._phoneNumber << std::endl;
-	std:: cout << "Darkest secret: " << list[i]._darkestSecret << std::endl;
+	std:: cout << "First name: " << list[i].firstName << std::endl;
+	std:: cout << "Last name: " << list[i].lastName << std::endl;
+	std:: cout << "Nickname: " << list[i].nickname << std::endl;
+	std:: cout << "Phone number: " << list[i].phoneNumber << std::endl;
+	std:: cout << "Darkest secret: " << list[i].darkestSecret << std::endl;
 }
 
 static void	printTruncatedString(std::string str)
@@ -79,14 +75,14 @@ static void	printContactList(Contact *list)
 {
 	int i = 0;
 
-	while (!list[i]._firstName.empty() && i < 8)
+	while (!list[i].firstName.empty() && i < 8)
 	{
 		std::cout << "         " << i + 1 << " | ";
-		printTruncatedString(list[i]._firstName);
+		printTruncatedString(list[i].firstName);
 		std::cout << " | ";
-		printTruncatedString(list[i]._lastName);
+		printTruncatedString(list[i].lastName);
 		std::cout << " | ";
-		printTruncatedString(list[i]._nickname);
+		printTruncatedString(list[i].nickname);
 		std::cout << std::endl;
 		i++;
 	}
@@ -103,7 +99,7 @@ void	PhoneBook::searchContact(Contact *list)
 {
 	std::string input;
 
-	if (list[0]._firstName.empty())
+	if (list[0].firstName.empty())
 		std::cout << "Contact list is empty. Try adding a contact first." << std::endl;
 	else
 	{
@@ -116,7 +112,7 @@ void	PhoneBook::searchContact(Contact *list)
 				continue ;
 			if (!myIsDigit(input) || stoi(input) < 1 || stoi(input) > 8)
 				std::cout << "Wrong index." << std::endl;
-			else if (list[stoi(input) - 1]._firstName.empty())
+			else if (list[stoi(input) - 1].firstName.empty())
 				std::cout << "Empty contact index." << std::endl;
 			else
 			{

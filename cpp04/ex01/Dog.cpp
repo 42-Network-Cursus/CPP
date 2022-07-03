@@ -5,10 +5,12 @@ Dog::Dog()
 {
 	this->type = "Dog";
 	std::cout << "* Dog default constructor called *" << std::endl;
+	this->_brain = new Brain();
 }
 
 Dog::~Dog()
 {
+	delete this->_brain;
 	std::cout << "* Dog default deconstructor called *" << std::endl;
 }
 

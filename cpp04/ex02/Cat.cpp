@@ -2,13 +2,15 @@
 #include <iostream>
 
 Cat::Cat()
-{
-	this->type = "Cat";
+{	
 	std::cout << "* Cat default constructor called *" << std::endl;
+	this->type = "Cat";
+	this->_brain = new Brain();
 }
 
 Cat::~Cat()
 {
+	delete this->_brain;
 	std::cout << "* Cat default deconstructor called *" << std::endl;
 }
 

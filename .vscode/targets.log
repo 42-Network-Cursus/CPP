@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun 28 22:01:01 2022
+# Make data base, printed on Fri Jul 01 21:22:37 2022
 
 # Variables
 
@@ -83,7 +83,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 DOKANLIBRARY1_LIBRARYPATH_X86 = C:\Program Files\Dokan\Dokan Library-1.4.1\x86\lib\
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
@@ -183,7 +183,8 @@ MAKE_VERSION := 4.3
 # environment
 PLATFORMCODE = KV
 # environment
-PROGRAMFILES(X86) = C:\Program Files (x86)
+PROGRAMFILES(X86) = C:\Program 
+ Files (x86)
 # environment
 USERDOMAIN_ROAMINGPROFILE = LAPTOP-5J89K4R6
 # environment
@@ -233,9 +234,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
 
 # Directories
 
-# . (key d:/vsc_42cursus/c++, mtime 1654424613): 14 files, no impossibilities.
+# . (key d:/vsc_42cursus/c++, mtime 1656531659): 15 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -292,12 +293,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 156 B / avg = 7 B
-# current buf: size = 8174 B / used = 156 B / count = 21 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 167 B / avg = 7 B
+# current buf: size = 8174 B / used = 167 B / count = 22 / avg = 7 B
 
-# strcache performance: lookups = 24 / hit rate = 12%
+# strcache performance: lookups = 25 / hit rate = 12%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Tue Jun 28 22:01:01 2022
+# Load=22/8192=0%, Rehash=0, Collisions=0/25=0%
+# Finished Make data base on Fri Jul 01 21:22:37 2022
 
  

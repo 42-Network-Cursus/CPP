@@ -12,9 +12,9 @@
 
 NAME	=	ex01
 SRCS	=	main.cpp PhoneBook.cpp
+INCL	=	incl/
 OBJS	=	$(SRCS:.cpp=.o)
-FLAGS	= -Wall -Wextra -Werror -std=c++98 \
-
+FLAGS	= -Wall -Wextra -Werror -std=c++98 -I$INCL
 CC	=	c++
 RM	=	rm -rf
 
