@@ -6,12 +6,14 @@
 # include "AMateria.hpp"
 
 # define INVSIZE 4
+# define GROUNDSIZE 1024
 
 class Character : public ICharacter
 {
 private:
-	std::string _name;
-	AMateria* _storage[INVSIZE];
+	std::string	_name;
+	AMateria*	_storage[INVSIZE];
+	AMateria*	_mUnequiped[GROUNDSIZE];
 public:
 	Character();
 	Character(std::string const name);
@@ -23,6 +25,8 @@ public:
 	virtual void equip(AMateria* m);
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter& target);
+
+	bool addToList(AMateria* storage[], int idx);
 };
 
 #endif

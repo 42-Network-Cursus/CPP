@@ -1,5 +1,6 @@
 #include "Character.hpp"
 #include <string>
+#include <iostream>
 
 Character::Character() : _name("Default")
 {
@@ -13,12 +14,17 @@ Character::Character(std::string const name) :
 {
 	for (int i = 0; i < INVSIZE; i++)
 		_storage[i] = nullptr;
+	for (int i = 0; i < GROUNDSIZE; i++)
+		_mUnequiped[i] = nullptr;
 	//Name Constructor
 }
 
 Character::~Character()
 {
-	//delete shit
+	for (int i = 0; i < INVSIZE; i++)
+		delete this->_storage[i];
+	for (int i = 0; i < GROUNDSIZE; i++)
+		delete this->_mUnequiped[i];
 	//Deconstructor
 }
 
@@ -27,10 +33,10 @@ _name(copy._name)
 {
 	for (int i = 0; i < INVSIZE; i++)
 	{
+		delete this->_storage[i];
 		this->_storage[i] = copy._storage[i];
 	}
 	//Copy constructor
-	//delete old Materias
 }
 
 Character& Character::operator=(Character const & rhs)
@@ -38,9 +44,9 @@ Character& Character::operator=(Character const & rhs)
 	this->_name = rhs._name;
 	for (int i = 0; i < INVSIZE; i++)
 	{
+		delete this->_storage[i];
 		this->_storage[i] = rhs._storage[i];
 	}
-	//delete old materias
 	return (*this);
 }
 
@@ -60,14 +66,30 @@ void Character::equip(AMateria* m)
 		}
 	}
 }
+
+bool Character::addToList(AMateria* storage[], int idx)
+{
+	for (int i = 0; i < GROUNDSIZE; i++)
+	{
+		if (this->_mUnequiped[i] == nullptr)
+		{
+			this->_mUnequiped[i] = storage[idx];
+			return true;
+		}
+	}
+	return false;
+}
+
 void Character::unequip(int idx)
 {
 	if (idx < INVSIZE)
 	{
 		if (this->_storage[idx] != nullptr)
 		{	
-			//Store Materia address
-			this->_storage[idx] = nullptr;
+			if (addToList(this->_storage, idx) == false)
+				std::cout << "No more space on the ground. Can't throw any more materias." << std::endl;
+			else
+				this->_storage[idx] = nullptr;
 		}
 	}
 }

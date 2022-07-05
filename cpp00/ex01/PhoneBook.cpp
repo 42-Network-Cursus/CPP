@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cwastche <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:47:02 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 11:47:09 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/05 11:50:16 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static void	printTruncatedString(std::string str)
 static void	printContactList(Contact *list)
 {
 	int i = 0;
-
+	std::cout << "     INDEX |" << " FIRST NAME |" << "  LAST NAME |" << "  NICKNAME" << std::endl;
 	while (!list[i].firstName.empty() && i < 8)
 	{
 		std::cout << "         " << i + 1 << " | ";

@@ -3,17 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cwastche <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 11:45:04 by cwastche          #+#    #+#              #
-#    Updated: 2022/06/29 11:45:07 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/05 11:41:47 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	ex00
 
-FLAGS	= -Wall -Wextra -Werror \
- -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 CC	=	c++
 

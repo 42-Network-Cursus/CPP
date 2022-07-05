@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cwastche <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 11:46:51 by cwastche          #+#    #+#              #
-#    Updated: 2022/06/29 11:46:53 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/05 12:03:16 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	ex01
 SRCS	=	main.cpp PhoneBook.cpp
 OBJS	=	$(SRCS:.cpp=.o)
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 CC		=	c++
 RM		=	rm -rf
 
