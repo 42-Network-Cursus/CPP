@@ -1,7 +1,8 @@
 #include "Cure.hpp"
 #include <iostream>
 
-Cure::Cure() : _type("cure")
+Cure::Cure() : 
+AMateria("cure")
 {
 	std::cout << "Cure constructor called" << std::endl;
 }
@@ -11,25 +12,26 @@ Cure::~Cure()
 	std::cout << "Cure deconstructor called" << std::endl;
 }
 
-Cure::Cure(Cure& const copy) _type(copy.getType())
+Cure::Cure(Cure const & copy) :
+AMateria(copy.getType())
 {
 	std::cout << "Cure copy constructor called" << std::endl;
 }
 
-Cure& Cure::operator=(Cure& const cure)
+Cure& Cure::operator=(Cure const & rhs)
 {
-	*this = cure;
+//	*this = rhs;
 	return (*this);
 }
 
 
-Cure* Cure::clone() const
+AMateria* Cure::clone() const
 {
-	Cure* ret = new Cure();
+	AMateria* ret = new Cure();
 	return (ret);
 }
 
 void Cure::use(ICharacter& target)
 {
-	std::cout << "* heals " << target << "'s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

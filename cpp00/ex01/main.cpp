@@ -27,11 +27,11 @@ int	main()
 		std::getline(std::cin, input);
 		if (input == "ADD")
 		{
-			directory.addContact(directory._list);
+			directory.addContact(directory.list);
 		}
 		else if (input == "SEARCH")
 		{
-			directory.searchContact(directory._list);
+			directory.searchContact(directory.list);
 		}
 		else if (input == "EXIT")
 		{

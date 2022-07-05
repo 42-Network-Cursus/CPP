@@ -1,5 +1,10 @@
-#ifnef ICHARACTER_HPP
+#ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
+
+# include "AMateria.hpp"
+# include <string>
+
+class AMateria;
 
 class ICharacter
 {

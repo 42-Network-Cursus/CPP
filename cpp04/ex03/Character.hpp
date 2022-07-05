@@ -2,19 +2,22 @@
 # define Character_HPP
 
 # include <string>
+# include "ICharacter.hpp"
+# include "AMateria.hpp"
+
+# define INVSIZE 4
 
 class Character : public ICharacter
 {
 private:
 	std::string _name;
-	AMateria* _storage[4];
-	static	int	_nbOfMaterias;
+	AMateria* _storage[INVSIZE];
 public:
 	Character();
 	Character(std::string const name);
 	virtual ~Character();
-	Character(Character& const copy);
-	Character& operator=(Character& const character);
+	Character(Character const & copy);
+	Character& operator=(Character const & character);
 
 	virtual std::string const & getName() const;
 	virtual void equip(AMateria* m);

@@ -1,6 +1,8 @@
+#include <iostream>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-AMateria::AMateria() : _type("emptyMateria")
+AMateria::AMateria() : _type("empty")
 {
 	// Constructor
 }
@@ -10,12 +12,12 @@ AMateria::~AMateria()
 	//Deconstructor
 }
 
-AMateria::AMateria(AMateria& const copy) : _type(copy.getType())
+AMateria::AMateria(AMateria const & copy) : _type(copy.getType())
 {
 
 }
 
-AMateria& AMateria::operator=(AMateria& const rhs)
+AMateria& AMateria::operator=(AMateria const & rhs)
 {
 	*this = rhs;
 	return (*this);
@@ -33,5 +35,5 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "* flails his arms angrily at " << target << " *" << std::endl;
+	std::cout << "*	does nothing to " << target.getName() << " *" << std::endl;
 }
