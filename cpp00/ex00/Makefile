@@ -6,11 +6,11 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 11:45:04 by cwastche          #+#    #+#              #
-#    Updated: 2022/07/05 11:41:47 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/08 15:01:24 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ex00
+NAME	=	Megaphone
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

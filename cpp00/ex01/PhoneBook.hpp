@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cwastche <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:47:18 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 11:47:19 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:04:47 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 class PhoneBook 
 {
+private:
+	Contact _list[8];
 public:
-	Contact list[8];
-
-	void	addContact(Contact *list);
-	void	searchContact(Contact *list);
+	void	addContact();
+	void	searchContact();
 };
 
 #endif

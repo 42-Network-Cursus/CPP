@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cwastche <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:47:25 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 11:47:26 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:04:10 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 #include <string>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
+#include <csignal>
+
+void	handleSigint(int signum)
+{
+	std::cout << std::endl << "Use EXIT to quit" << std::endl;
+}
 
 int	main()
 {
@@ -21,17 +27,18 @@ int	main()
 	PhoneBook	directory;
 
 	std::cout << "This is a phonebook. Use it to add and/or search your contacts." << std::endl;
+	signal(SIGINT, handleSigint);
 	while (1)
 	{
 		std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
 		std::getline(std::cin, input);
 		if (input == "ADD")
 		{
-			directory.addContact(directory.list);
+			directory.addContact();
 		}
 		else if (input == "SEARCH")
 		{
-			directory.searchContact(directory.list);
+			directory.searchContact();
 		}
 		else if (input == "EXIT")
 		{
