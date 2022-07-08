@@ -1,7 +1,4 @@
 #include "MateriaSource.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
-#include <string>
 
 MateriaSource::MateriaSource()
 {

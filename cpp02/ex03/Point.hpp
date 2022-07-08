@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:38:23 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 13:38:33 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:50:43 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define POINT_HPP
 
 # include "Fixed.hpp"
-
+# include <iostream>
 class Point
 {
 private:

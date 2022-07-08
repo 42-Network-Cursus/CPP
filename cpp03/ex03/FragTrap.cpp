@@ -6,13 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 15:44:37 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 15:50:25 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:53:53 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-#include <string>
-#include <iostream>
 
 /*********************/
 /* --- CONSTRUCT --- */

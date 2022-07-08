@@ -6,11 +6,11 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 12:03:52 by cwastche          #+#    #+#              #
-#    Updated: 2022/06/29 12:04:04 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/08 15:43:54 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ex04
+NAME	=	Sed_is_for_losers
 SRCS	=	main.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

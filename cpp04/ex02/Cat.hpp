@@ -3,6 +3,7 @@
 
 # include "AAnimal.hpp"
 # include "Brain.hpp"
+# include <iostream>
 
 class Cat: public AAnimal
 {

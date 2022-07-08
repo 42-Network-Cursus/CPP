@@ -6,13 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 12:04:15 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 12:04:43 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:44:33 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-#include <string>
-#include <iostream>
 
 Harl::Harl(void)
 {

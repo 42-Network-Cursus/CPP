@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 12:00:36 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 12:00:43 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:42:56 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Weapon.hpp"
 # include <string>
+# include <iostream>
 
 class HumanB
 {

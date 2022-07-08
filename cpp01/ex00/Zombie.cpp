@@ -6,13 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:53:34 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 11:53:56 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:40:00 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
-#include <string>
 
 Zombie::Zombie(void)
 {

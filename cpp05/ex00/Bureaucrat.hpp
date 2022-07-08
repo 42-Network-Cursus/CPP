@@ -1,17 +1,20 @@
-#ifdef BUREAUCRAT_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/08 16:24:46 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/08 16:40:03 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
 # include <string>
-
-class GradeTooHighException : std::exception 
-{
-
-}
-
-// class GradeTooLowException : std::exception
-// {
-
-// }
+# include <iostream>
 
 class Bureaucrat
 {
@@ -22,12 +25,12 @@ public:
 	Bureaucrat();
 	~Bureaucrat();
 	Bureaucrat(std::string name);
-	Bureaucrat(Bureaucrat& const copy);
-	Bureaucrat& operator=(Bureaucrat& const rhs);
-
-	std::ostream operator<<(ostream& os);
+	Bureaucrat(Bureaucrat const & copy);
+	Bureaucrat& operator=(Bureaucrat const & rhs);
+	
 	std::string getName() const;
 	int			getGrade() const;
+	void		setGrade(int nb);
 	void		promoteBureaucrat();
 	void		demoteBureaucrat();
 
@@ -36,15 +39,20 @@ public:
 		public:
 			virtual const char* what() const throw()
 			{
-				return ("")
+				return ("Can't go above grade 1");
 			}
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			
+			virtual const char* what() const throw()
+			{
+				return ("Can't go below grade 150");
+			}
 	};
 };
+
+std::ostream& operator<<(std::ostream& os, Bureaucrat const & rhs);
 
 #endif

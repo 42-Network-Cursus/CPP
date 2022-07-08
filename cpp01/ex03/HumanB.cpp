@@ -6,13 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 12:00:12 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 12:03:17 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:42:53 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-#include <iostream>
-#include <string>
 
 HumanB::HumanB(std::string name) : _weapon(nullptr)
 {

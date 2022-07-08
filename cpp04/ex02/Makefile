@@ -1,4 +1,4 @@
-NAME	=	ex02
+NAME	=	Abstract
 SRCS	=	Cat.cpp Dog.cpp main.cpp AAnimal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 

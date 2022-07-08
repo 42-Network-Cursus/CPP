@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 15:55:11 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 15:55:17 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:54:16 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 # include <string>
+# include <iostream>
 
 class DiamondTrap: public ScavTrap, public FragTrap
 {

@@ -1,5 +1,4 @@
 #include "AAnimal.hpp"
-#include <iostream>
 
 AAnimal::AAnimal()
 {

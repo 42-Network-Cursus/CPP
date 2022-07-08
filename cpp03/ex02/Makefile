@@ -6,11 +6,11 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 15:44:45 by cwastche          #+#    #+#              #
-#    Updated: 2022/06/29 15:44:46 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/08 15:53:20 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ex02
+NAME	=	FragTrap
 SRCS	=	main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

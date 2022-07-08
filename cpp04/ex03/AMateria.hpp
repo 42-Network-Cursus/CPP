@@ -2,6 +2,7 @@
 # define AMATERIA_HPP
 
 # include <string>
+# include <iostream>
 # include "ICharacter.hpp"
 
 # define INVSIZE 4

@@ -6,11 +6,11 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 11:56:06 by cwastche          #+#    #+#              #
-#    Updated: 2022/06/29 11:56:12 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/08 15:40:58 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ex01
+NAME	=	Moar_brainz!
 SRCS	=	main.cpp Zombie.cpp zombieHorde.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

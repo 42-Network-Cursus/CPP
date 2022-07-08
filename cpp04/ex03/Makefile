@@ -1,4 +1,4 @@
-NAME	=	ex03
+NAME	=	YerAWizard...
 SRCS	=	AMateria.cpp \
 			Character.cpp \
 			Cure.cpp \

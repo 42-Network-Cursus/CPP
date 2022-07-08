@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:59:59 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 12:00:10 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:43:09 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Weapon.hpp"
 # include <string>
+# include <iostream>
 
 class HumanA
 {

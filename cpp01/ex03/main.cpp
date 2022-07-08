@@ -6,14 +6,13 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 12:00:53 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 12:01:06 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:43:22 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-#include <iostream>
 
 int main()
 {

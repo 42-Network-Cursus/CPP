@@ -6,12 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 15:37:05 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 15:37:42 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:52:25 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include <iostream>
 
 int main()
 {

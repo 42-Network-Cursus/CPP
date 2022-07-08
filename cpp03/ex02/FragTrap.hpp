@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 15:44:39 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 15:44:40 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:53:01 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "ClapTrap.hpp"
 # include <string>
+# include <iostream>
 
 class FragTrap: public ClapTrap
 {

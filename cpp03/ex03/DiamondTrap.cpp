@@ -6,13 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 15:55:04 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 16:11:24 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:54:14 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
-#include <string>
-#include <iostream>
 
 /*********************/
 /* --- CONSTRUCT --- */

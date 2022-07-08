@@ -6,12 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:37:59 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 13:38:16 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:50:40 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
-#include <iostream>
 
 Point::Point() : _x(0), _y(0)
 {

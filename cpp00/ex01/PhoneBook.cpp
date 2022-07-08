@@ -6,15 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:47:02 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/08 15:06:15 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:37:23 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include <iomanip>
 
 /* addContact */
 

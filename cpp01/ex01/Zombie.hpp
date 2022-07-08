@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:54:53 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 11:55:35 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:41:13 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ZOMBIE_HPP
 
 # include <string>
+# include <iostream>
 
 class Zombie
 {

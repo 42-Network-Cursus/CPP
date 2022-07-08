@@ -6,13 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:23:46 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 15:51:20 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:51:57 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include <iostream>
-#include <string>
 
 /*********************/
 /* --- CONSTRUCT --- */

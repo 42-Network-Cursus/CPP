@@ -1,9 +1,9 @@
-#include <iostream>
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Animal.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+#include <new>
 
 int main()
 {

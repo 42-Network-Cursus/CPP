@@ -1,6 +1,4 @@
 #include "Character.hpp"
-#include <string>
-#include <iostream>
 
 Character::Character() : _name("Default")
 {

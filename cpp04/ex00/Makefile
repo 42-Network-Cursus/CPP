@@ -1,4 +1,4 @@
-NAME	=	ex00
+NAME	=	Polymorphism
 SRCS	=	Cat.cpp Dog.cpp main.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

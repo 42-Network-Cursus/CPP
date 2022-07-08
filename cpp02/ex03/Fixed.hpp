@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:35:40 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 13:41:05 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:50:34 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FIXED_HPP
 
 # include <iostream>
-
+# include <cmath>
 //#define ANNOUNCE //Comment line to remove constuction announcements
 
 class Fixed

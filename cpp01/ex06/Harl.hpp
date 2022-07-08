@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:20:14 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 13:20:21 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:45:11 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define HARL
 
 # include <string>
+# include <iostream>
 
 class Harl
 {

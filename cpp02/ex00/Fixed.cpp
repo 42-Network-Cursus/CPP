@@ -6,12 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:22:38 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 13:23:01 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:47:37 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed(void) : _fixedNumber(0)
 {

@@ -6,11 +6,11 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 11:59:05 by cwastche          #+#    #+#              #
-#    Updated: 2022/06/29 11:59:12 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/08 15:41:49 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ex02
+NAME	=	HI_THIS_IS_BRAIN
 SRCS	=	main.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

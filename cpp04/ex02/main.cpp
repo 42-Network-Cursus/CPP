@@ -1,11 +1,10 @@
-#include <iostream>
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "AAnimal.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include "Brain.hpp"
-#include <cstdlib>
+#include <new>
 
 int main()
 {
