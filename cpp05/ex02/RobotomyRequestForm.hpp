@@ -4,6 +4,7 @@
 class RobotomyRequestForm
 {
 private:
+	std::string const _target;
 public:
 };
 

@@ -6,11 +6,12 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:24:43 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/09 10:04:57 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/09 11:53:02 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() :
 _name("Default"),
@@ -111,6 +112,27 @@ void		Bureaucrat::demoteBureaucrat()
 		}
 	}
 	catch (GradeTooLowException& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void		Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		if (this->getGrade() > form.getGradeToSign())
+		{
+			std::cout << this->getName() << " couldn't sign " << form.getName() << " because ";
+			throw Form::GradeTooLowException();
+		}
+		else
+		{
+			std::cout << this->getName() << " signed " << form.getName() << std::endl;
+			form.setSignature(true);
+		}
+	}
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

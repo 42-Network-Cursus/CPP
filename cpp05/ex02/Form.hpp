@@ -29,6 +29,8 @@ public:
 	void		setSignature(bool sign);
 	void		beSigned(Bureaucrat& bureaucrat);
 
+	virtual void execute(Bureaucrat const & executor) = 0;
+
 	class GradeTooLowException : public std::exception
 	{
 		public:
