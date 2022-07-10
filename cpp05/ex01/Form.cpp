@@ -4,21 +4,12 @@ std::ostream&	operator<<(std::ostream& os, Form& form)
 {
 	std::cout << "Name: " << form.getName() << std::endl;
 	if (form.getSignature())
-		std::cout << "Signed: true" << std::endl;
+		std::cout << "Signed: Yes" << std::endl;
 	else
-		std::cout << "Signed: false" << std::endl;
+		std::cout << "Signed: No" << std::endl;
 	std::cout << "Grade to sign: " << form.getGradeToSign() << std::endl;
 	std::cout << "Grade to execute: " << form.getGradeToExecute() << std::endl;
 	return (os);
-}
-
-Form::Form() :
-_name("Default"),
-_signature(false),
-_gradeToSign(1),
-_gradeToExecute(50)
-{
-	//Constructor
 }
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute)
@@ -85,8 +76,14 @@ void		Form::setSignature(bool sign)
 }
 
 void		Form::beSigned(Bureaucrat& bureaucrat)
-{
-	bureaucrat.signForm(*this);
+{	try
+	{
+		bureaucrat.signForm(*this);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 

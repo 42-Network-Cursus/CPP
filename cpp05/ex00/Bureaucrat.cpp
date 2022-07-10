@@ -12,13 +12,6 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() :
-_name("Default"),
-_grade(150)
-{
-	//constructor
-}
-
 Bureaucrat::Bureaucrat(std::string name, int grade) :
 _name(name),
 _grade(150)
@@ -27,10 +20,7 @@ _grade(150)
 	try
 	{
 		if (grade > 150)
-		{
 			throw GradeTooLowException();
-
-		}
 		else if (grade < 1)
 			throw GradeTooHighException();
 		else

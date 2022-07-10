@@ -13,13 +13,6 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat() :
-_name("Default"),
-_grade(150)
-{
-	//constructor
-}
-
 Bureaucrat::Bureaucrat(std::string name, int grade) :
 _name(name),
 _grade(150)
@@ -119,21 +112,15 @@ void		Bureaucrat::demoteBureaucrat()
 
 void		Bureaucrat::signForm(Form& form)
 {
-	try
+
+	if (this->getGrade() > form.getGradeToSign())
 	{
-		if (this->getGrade() > form.getGradeToSign())
-		{
-			std::cout << this->getName() << " couldn't sign " << form.getName() << " because ";
-			throw Form::GradeTooLowException();
-		}
-		else
-		{
-			std::cout << this->getName() << " signed " << form.getName() << std::endl;
-			form.setSignature(true);
-		}
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because ";
+		throw Form::GradeTooLowException();
 	}
-	catch (std::exception& e)
+	else
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+		form.setSignature(true);
 	}
 }

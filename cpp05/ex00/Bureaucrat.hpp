@@ -22,7 +22,6 @@ private:
 	std::string const	_name;
 	int					_grade;
 public:
-	Bureaucrat();
 	~Bureaucrat();
 	Bureaucrat(std::string name, int grade);
 	Bureaucrat(Bureaucrat const & copy);

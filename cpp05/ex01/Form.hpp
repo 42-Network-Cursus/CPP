@@ -15,17 +15,16 @@ private:
 	int			const	_gradeToSign;
 	int 		const	_gradeToExecute;
 public:
-	Form();
+	Form(std::string name, int gradeToSign, int gradeToExecute);
 	~Form();
 	Form(Form const & copy);
 	Form&	operator=(Form const & rhs);
 
-	Form(std::string name, int gradeToSign, int gradeToExecute);
+	std::string			getName() 			const;
+	bool				getSignature()		const;
+	int			const	getGradeToSign()	const;
+	int			const	getGradeToExecute() const;
 
-	std::string	getName() const;
-	bool		getSignature() const;
-	int const	getGradeToSign() const;
-	int const	getGradeToExecute() const;
 	void		setSignature(bool sign);
 	void		beSigned(Bureaucrat& bureaucrat);
 
