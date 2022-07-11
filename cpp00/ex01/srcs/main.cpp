@@ -31,12 +31,10 @@ int	main()
 	{
 		std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
 		std::getline(std::cin, input);
-		if (std::cin.eof() == 1)
+		while (input.length() == 0)
 		{
-			std::cout << std::endl << "Use EXIT to quit" << std::endl;
-			std::cin.clear();
-			std::cin.ignore();
-			continue ;
+			std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
+			std::getline(std::cin, input);
 		}
 		if (input == "ADD")
 			directory.addContact();
