@@ -30,7 +30,11 @@ int	main()
 	while (1)
 	{
 		std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
-		std::getline(std::cin, input);
+		if(!std::getline(std::cin, input))
+		{
+    		std::cin.clear();
+			continue ;
+		}
 		if (input == "ADD")
 			directory.addContact();
 		else if (input == "SEARCH")
@@ -40,9 +44,9 @@ int	main()
 			std::cout << "Exit program. Sure hope you saved those contacts elsewhere!" << std::endl;
 			return (0);
 		}
-		std::cin.clear();
-		if (std::cin.eof())
-			std::cin.ignore(1, '\n');
+		// std::cin.clear();
+		// if (std::cin.eof())
+		// 	std::cin.ignore(1, '\n');
 	}
 	return (0);
 }

@@ -36,22 +36,22 @@ $O	:
 
 $(OBJS):	| $O
 $(OBJS):	$O%.o: $S%
-			@echo -e $(BRed)"Compiling $^: "
+			@echo $(BRed)"Compiling $^: "
 			@$(CC) $(CFLAGS) -c $< -o $@
-			@echo -e $(BGreen)"✓"
+			@echo $(BGreen)"✓"
 
 $(NAME):	$(OBJS)
 			@$(CC) $^ -o $@
 
 clean	:	
-			@echo -e $(BRed)"Cleaning up objects..."
+			@echo $(BRed)"Cleaning up objects..."
 			@$(RM) $O
-			@echo -e $(BGreen)"✓"
+			@echo $(BGreen)"✓"
 
 fclean	:	clean
-			@echo -e $(BRed)"Cleaning up executable...!"
+			@echo $(BRed)"Cleaning up executable...!"
 			@$(RM) $(NAME)
-			@echo -e $(BGreen)"✓"
+			@echo $(BGreen)"✓"
 
 re		:	fclean all
 
