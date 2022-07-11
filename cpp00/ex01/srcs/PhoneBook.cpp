@@ -102,8 +102,7 @@ static bool	myIsDigit(std::string str)
 void	PhoneBook::searchContact()
 {
 	std::string 		input;
-	int					intInput = 0;
-	std::stringstream	ss;
+	int					intInput = -1;
 
 	if (this->_list[0].getFirstName().empty())
 		std::cout << "Contact list is empty. Try adding a contact first." << std::endl;
@@ -121,8 +120,7 @@ void	PhoneBook::searchContact()
 			}
 			if (input.empty())
 				continue ;
-			ss << input;
-			ss >> intInput;
+			intInput = atoi(input.c_str());
 			std::cout << intInput << std::endl;
 			if (!myIsDigit(input) || intInput < 1 || intInput > 8)
 				std::cout << "Wrong index." << std::endl;
