@@ -12,11 +12,13 @@ Intern::~Intern()
 
 Intern::Intern(Intern const & rhs)
 {
+	(void)rhs;
 	//Nothing to do for copy
 }
 
 Intern& Intern::operator=(Intern const & rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 
@@ -37,7 +39,7 @@ static Form*	makePresidentialPardonForm(std::string target)
 
 Form*	Intern::makeForm(std::string name, std::string target)
 {
-	t_formList formList[]
+	t_formList formList[] = 
 	{
 		{"shrubbery creation", &makeShrubberyCreationForm},
 		{"robotomy request", &makeRobotomyRequestForm},

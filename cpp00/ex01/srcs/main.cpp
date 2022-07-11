@@ -17,6 +17,7 @@
 void	handleSigint(int signum)
 {
 	std::cout << std::endl << "Use EXIT to quit" << std::endl;
+	(void)signum;
 }
 
 int	main()

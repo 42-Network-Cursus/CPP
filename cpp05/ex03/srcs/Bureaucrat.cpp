@@ -46,8 +46,8 @@ Bureaucrat::~Bureaucrat()
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & copy) :
-_grade(copy._grade),
-_name(copy._name)
+_name(copy._name),
+_grade(copy._grade)
 {
 	//copy constructor
 }

@@ -10,24 +10,54 @@
 #                                                                              #
 # **************************************************************************** #
 
+#COLORS
+BRed	=	'\033[1;31m'
+BGreen	=	'\033[1;32m'	
+NC		=	'\033[0m'
+
 NAME	=	PhoneBook
-SRCS	=	main.cpp PhoneBook.cpp Contact.cpp
-OBJS	=	$(SRCS:.cpp=.o)
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
+I		=	incs/
+S		=	srcs/
+O		=	objs/
+SRCS	=	main.cpp \
+			PhoneBook.cpp \
+			Contact.cpp
+SRCS	:=	$(foreach file, $(SRCS), $S$(file))
+OBJS	=	$(SRCS:$S%=$O%.o)
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 
+CFLAGS	+=	-I$(I)
 CC		=	c++
 RM		=	rm -rf
+LOG		=	@echo -e
 
-all	: $(NAME)
+all	:	$(NAME)
 
-$(NAME)	:	$(OBJS)
-			$(CC) $(FLAGS) -o $(NAME) $(OBJS)
+$O	:
+			@mkdir $@
+
+$(OBJS):	| $O
+$(OBJS):	$O%.o: $S%
+			$(LOG) $(BRed)"Compiling $^: "
+			@$(CC) $(CFLAGS) -c $< -o $@
+			$(LOG) $(BGreen)"✓"
+
+$(NAME):	$(OBJS)
+			@$(CC) $^ -o $@
 
 clean	:	
-			$(RM) $(OBJS)
+			$(LOG) $(BRed)"Cleaning up objects..."
+			@$(RM) $O
+			$(LOG) $(BGreen)"✓"
 
 fclean	:	clean
-			$(RM) $(NAME)
+			$(LOG) $(BRed)"Cleaning up executable...!"
+			@$(RM) $(NAME)
+			$(LOG) $(BGreen)"✓"
 
 re		:	fclean all
 
-PHONY	:	all fclean 
+run		:	$(NAME)
+			./$(NAME)
+
+PHONY	:	all clean fclean re run 
+
