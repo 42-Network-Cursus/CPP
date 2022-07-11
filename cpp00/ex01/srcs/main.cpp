@@ -34,6 +34,7 @@ int	main()
 		if (input.length() == 0)
 		{
     		std::cin.clear();
+			input.clear();
 			std::cout << std::endl;
 		}
 		if (input == "ADD")
