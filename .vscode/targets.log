@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 11 16:05:29 2022
+# Make data base, printed on Mon Jul 11 18:03:50 2022
 
 # Variables
 
@@ -185,8 +185,7 @@ APPDATA = C:\Users\Cyril Wastchenko\AppData\Roaming
 # environment
 HOMEDRIVE = C:
 # environment
-PROCESSOR_ARC 
-HITECTURE = x86
+PROCESSOR_ARCHITECTURE = x86
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -289,6 +288,6 @@ GNUmakefile:
 # strcache performance: lookups = 25 / hit rate = 12%
 # hash-table stats:
 # Load=22/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Mon Jul 11 16:05:29 2022
+# Finished Make data base on Mon Jul 11 18:03:50 2022
 
  
