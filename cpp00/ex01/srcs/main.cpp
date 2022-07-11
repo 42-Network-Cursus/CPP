@@ -16,8 +16,9 @@
 
 void	handleSigint(int signum)
 {
-	std::cout << std::endl << "Use EXIT to quit" << std::endl;
-	(void)signum;
+
+	std::cout << std::endl << "Error " << signum << ": Use EXIT to quit" << std::endl;
+	// (void)signum;
 }
 
 int	main()
@@ -33,7 +34,8 @@ int	main()
 		if(!std::getline(std::cin, input))
 		{
     		std::cin.clear();
-			continue ;
+			std::cout << std::endl;
+			// continue ;
 		}
 		if (input == "ADD")
 			directory.addContact();
