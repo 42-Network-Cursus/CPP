@@ -29,18 +29,18 @@ int	main()
 	signal(SIGINT, handleSigint); // Handle ctrl + C
 	while (1)
 	{
-		std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
-		std::getline(std::cin, input);
-		if (!std::cin and std::cin.eof()) // Handle ctrl + D
-			continue ;
-		if (input == "ADD")
-			directory.addContact();
-		else if (input == "SEARCH")
-			directory.searchContact();
-		else if (input == "EXIT")
+		while (std::getline(std::cin, input))
 		{
-			std::cout << "Exit program. Sure hope you saved those contacts elsewhere!" << std::endl;
-			return (0);
+			std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
+			if (input == "ADD")
+				directory.addContact();
+			else if (input == "SEARCH")
+				directory.searchContact();
+			else if (input == "EXIT")
+			{
+				std::cout << "Exit program. Sure hope you saved those contacts elsewhere!" << std::endl;
+				return (0);
+			}
 		}
 	}
 	return (0);
