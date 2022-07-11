@@ -34,7 +34,9 @@ int	main()
 		if (std::cin.eof() == 1)
 		{
 			std::cout << std::endl << "Use EXIT to quit" << std::endl;
-			continue;
+			std::cin.clear();
+			std::cin.ignore();
+			continue ;
 		}
 		if (input == "ADD")
 			directory.addContact();
