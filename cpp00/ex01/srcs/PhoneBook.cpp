@@ -133,6 +133,7 @@ void	PhoneBook::searchContact()
 				printContactDetails(this->_list, intInput - 1);
 				break ;
 			}
+			ss.clear();
 		}
 	}
 }

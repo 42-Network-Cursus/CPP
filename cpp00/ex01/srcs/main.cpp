@@ -26,19 +26,17 @@ int	main()
 	PhoneBook	directory;
 
 	std::cout << "This is a phonebook. Use it to add and/or search your contacts." << std::endl;
-	signal(SIGINT, handleSigint);
+	signal(SIGINT, handleSigint); // Handle ctrl + C
 	while (1)
 	{
 		std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
 		std::getline(std::cin, input);
+		if (!std::cin and std::cin.eof()) // Handle ctrl + D
+			continue ;
 		if (input == "ADD")
-		{
 			directory.addContact();
-		}
 		else if (input == "SEARCH")
-		{
 			directory.searchContact();
-		}
 		else if (input == "EXIT")
 		{
 			std::cout << "Exit program. Sure hope you saved those contacts elsewhere!" << std::endl;
