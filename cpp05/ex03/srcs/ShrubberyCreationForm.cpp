@@ -36,7 +36,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor)
 {
 	this->checkExecutePrivilege(executor);
 	std::string fileName = this->getTarget() + "_shrubbery";
-	std::ofstream	file(fileName);
+	std::ofstream	file(fileName.c_str());
 	file << "       _-_       " << std::endl;
 	file << "    /~~   ~~\\    " << std::endl;
 	file << "  /~~       ~~\\  " << std::endl;

@@ -15,9 +15,11 @@
 
 # include "Contact.hpp"
 # include <iostream>
+# include <ostream>
 # include <string>
 # include <cstdlib>
 # include <iomanip>
+# include <sstream>
 
 class PhoneBook 
 {
