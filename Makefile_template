@@ -14,7 +14,6 @@ CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 CFLAGS	+=	-I$(I)
 CC		=	c++
 RM		=	rm -rf
-LOG		=	@echo -e
 
 all	:	$(NAME)
 
@@ -23,22 +22,22 @@ $O	:
 
 $(OBJS):	| $O
 $(OBJS):	$O%.o: $S%
-			$(LOG) $(BRed)"Compiling $^: "
+			@echo -e $(BRed)"Compiling $^: "
 			@$(CC) $(CFLAGS) -c $< -o $@
-			$(LOG) $(BGreen)"✓"
+			@echo -e $(BGreen)"✓"
 
 $(NAME):	$(OBJS)
 			@$(CC) $^ -o $@
 
 clean	:	
-			$(LOG) $(BRed)"Cleaning up objects..."
+			@echo -e $(BRed)"Cleaning up objects..."
 			@$(RM) $O
-			$(LOG) $(BGreen)"✓"
+			@echo -e $(BGreen)"✓"
 
 fclean	:	clean
-			$(LOG) $(BRed)"Cleaning up executable...!"
+			@echo -e $(BRed)"Cleaning up executable...!"
 			@$(RM) $(NAME)
-			$(LOG) $(BGreen)"✓"
+			@echo -e $(BGreen)"✓"
 
 re		:	fclean all
 
