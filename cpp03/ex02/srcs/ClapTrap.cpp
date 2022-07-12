@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:23:46 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/08 15:52:42 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/12 11:11:48 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,16 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-	*this = copy;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+	this->_name = name;
 	announce("* Name ClapTrap constructor called *");
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
 {
+	*this = copy;
 	announce("* Copy ClapTrap constructor called *");
 }
 

@@ -6,7 +6,7 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 11:59:05 by cwastche          #+#    #+#              #
-#    Updated: 2022/07/08 15:41:49 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/12 10:47:10 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,4 +30,4 @@ fclean	:	clean
 
 re		:	fclean all
 
-PHONY	:	all fclean 
+PHONY	:	all clean fclean re

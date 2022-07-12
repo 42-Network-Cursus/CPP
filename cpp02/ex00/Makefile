@@ -6,12 +6,10 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:23:22 by cwastche          #+#    #+#              #
-#    Updated: 2022/07/08 15:48:41 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/12 10:56:50 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Fixed_Canon
-SRCS	=	main.cpp Fixed.cpp
 #COLORS
 BRed	=	'\033[1;31m'
 BGreen	=	'\033[1;32m'	

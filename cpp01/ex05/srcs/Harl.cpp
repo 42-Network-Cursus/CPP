@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 12:04:15 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/08 15:44:33 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/12 13:40:16 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,28 @@ Harl::~Harl(void)
 
 void	Harl::debug(void)
 {
-	std::cout << "DEBUG" << std::endl;
+	std::cout << "--- DEBUG ---" << std::endl;
+	std::cout << "Some debug message" << std::endl << std::endl;
+
 }
 
 void	Harl::info(void)
 {
-	std::cout << "INFO" << std::endl;
+	std::cout << "--- INFO ---" << std::endl;
+	std::cout << "Some info message" << std::endl << std::endl;
+
 }
 
 void	Harl::warning(void)
 {
-	std::cout <<  "WARNING" << std::endl;
+	std::cout <<  "--- WARNING ---" << std::endl;
+	std::cout << "Some warning message" << std::endl << std::endl;
 }
 
 void	Harl::error(void)
 {
-	std::cout << "ERROR" << std::endl;
+	std::cout << "--- ERROR ---" << std::endl;
+	std::cout << "Some error message" << std::endl << std::endl;
 }
 
 void	Harl::complain(std::string level)

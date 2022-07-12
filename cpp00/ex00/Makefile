@@ -6,17 +6,17 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 11:45:04 by cwastche          #+#    #+#              #
-#    Updated: 2022/07/08 15:01:24 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/12 10:25:41 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	Megaphone
 
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-CC	=	c++
+CC		=	c++
 
-rm	=	rm -rf
+rm		=	rm -rf
 
 all	: $(NAME)
 

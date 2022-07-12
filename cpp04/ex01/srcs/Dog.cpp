@@ -30,3 +30,8 @@ void	Dog::makeSound() const
 {
 	std::cout << "Dog sounds..." << std::endl;
 }
+
+void	Dog::haveIdea(int idx)
+{
+	std::cout << this->_brain.getIdea(idx) << std::endl;
+}

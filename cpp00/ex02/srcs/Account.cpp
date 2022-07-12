@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 15:01:48 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/08 15:01:51 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/12 10:28:09 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,5 +148,5 @@ void	Account::_displayTimestamp( void )
 	std::cout << time->tm_min;
 	if (time->tm_sec < 10)
 		std::cout << 0;
-	std::cout << time->tm_sec << "]";
+	std::cout << time->tm_sec << "] ";
 }

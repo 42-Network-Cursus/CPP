@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:37:24 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 13:37:34 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/12 11:07:29 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Fixed& Fixed::operator++(void) //prefix
 
 Fixed Fixed::operator++(int zero) //postfix
 {
+	(void)zero;
 	Fixed old(*this);
 	operator++();
 	return (old);
@@ -37,6 +38,7 @@ Fixed& Fixed::operator--(void) //prefix
 
 Fixed Fixed::operator--(int zero) //postfix
 {
+	(void)zero;
 	Fixed old(*this);
 	operator--();
 	return (old);

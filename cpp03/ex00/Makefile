@@ -6,12 +6,10 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 14:38:33 by cwastche          #+#    #+#              #
-#    Updated: 2022/07/08 15:51:15 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/12 11:09:54 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ClapTrap
-SRCS	=	main.cpp ClapTrap.cpp
 #COLORS
 BRed	=	'\033[1;31m'
 BGreen	=	'\033[1;32m'	

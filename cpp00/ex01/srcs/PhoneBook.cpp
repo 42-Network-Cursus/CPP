@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:47:02 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/08 15:37:23 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/12 10:24:12 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,13 @@ static std::string	fillContactInfo(std::string msg)
 	while (1)
 	{
 		std::cout << msg << std::endl;
-		getline(std::cin, input);
+		std::getline(std::cin, input);
+		if (std::cin.eof() || std::cin.fail())
+		{
+    		std::cin.clear();
+			clearerr(stdin);
+			std::cout << std::endl << "Use EXIT to quit" << std::endl;
+		}
 		if (input == "EXIT")
 		{
 			std::cout << "Exit program. Sure hope you saved those contacts elsewhere!" << std::endl;
@@ -112,7 +118,13 @@ void	PhoneBook::searchContact()
 		{
 			printContactList(this->_list);
 			std::cout << "Enter the index of the contact you would like to search." << std::endl;
-			getline(std::cin, input);
+			std::getline(std::cin, input);
+			if (std::cin.eof() || std::cin.fail())
+			{
+				std::cin.clear();
+				clearerr(stdin);
+				std::cout << std::endl << "Use EXIT to quit" << std::endl;
+			}
 			if (input == "EXIT")
 			{
 				std::cout << "Exit program. Sure hope you saved those contacts elsewhere!" << std::endl;

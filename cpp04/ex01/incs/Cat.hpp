@@ -16,6 +16,7 @@ public:
 	virtual Cat& operator=(const Cat& Cat);
 
 	void	makeSound() const;
+	void	haveIdea(int idx);
 };
 
 #endif

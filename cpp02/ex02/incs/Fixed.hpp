@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:26:12 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/08 15:50:10 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/12 11:04:41 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <cmath>
 
-# define ANNOUNCE //Comment line to remove constuction announcements
+//# define ANNOUNCE //Comment line to remove constuction announcements
 
 class Fixed
 {

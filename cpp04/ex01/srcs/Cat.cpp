@@ -30,3 +30,8 @@ void	Cat::makeSound() const
 {
 	std::cout << "Cat sounds..." << std::endl;
 }
+
+void	Cat::haveIdea(int idx)
+{
+	std::cout << this->_brain.getIdea(idx) << std::endl;
+}

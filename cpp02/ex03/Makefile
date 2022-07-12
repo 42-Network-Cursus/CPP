@@ -6,12 +6,10 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:37:48 by cwastche          #+#    #+#              #
-#    Updated: 2022/07/08 15:50:24 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/12 11:07:58 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	BSP
-SRCS	=	main.cpp Fixed.cpp FixedOperatorsOverload.cpp Point.cpp bsp.cpp
 #COLORS
 BRed	=	'\033[1;31m'
 BGreen	=	'\033[1;32m'	

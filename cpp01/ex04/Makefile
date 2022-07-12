@@ -6,54 +6,28 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 12:03:52 by cwastche          #+#    #+#              #
-#    Updated: 2022/07/08 15:43:54 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/12 10:53:23 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#COLORS
-BRed	=	'\033[1;31m'
-BGreen	=	'\033[1;32m'	
-NC		=	'\033[0m'
-
-NAME	=	Sed_is_for_losers
-I		=	incs/
-S		=	srcs/
-O		=	objs/
+NAME	=	SED_IS_FOR_LOSERS
 SRCS	=	main.cpp
-SRCS	:=	$(foreach file, $(SRCS), $S$(file))
-OBJS	=	$(SRCS:$S%=$O%.o)
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 
-CFLAGS	+=	-I$(I)
+OBJS	=	$(SRCS:.cpp=.o)
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
 CC		=	c++
 RM		=	rm -rf
 
-all	:	$(NAME)
+all	: $(NAME)
 
-$O	:
-			@mkdir $@
-
-$(OBJS):	| $O
-$(OBJS):	$O%.o: $S%
-			@echo $(BRed)"Compiling $^: "
-			@$(CC) $(CFLAGS) -c $< -o $@
-			@echo $(BGreen)"✓"
-
-$(NAME):	$(OBJS)
-			@$(CC) $^ -o $@
+$(NAME)	:	$(OBJS)
+			$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 
 clean	:	
-			@echo $(BRed)"Cleaning up objects..."
-			@$(RM) $O
-			@echo $(BGreen)"✓"
+			$(RM) $(OBJS)
 
 fclean	:	clean
-			@echo $(BRed)"Cleaning up executable...!"
-			@$(RM) $(NAME)
-			@echo $(BGreen)"✓"
+			$(RM) $(NAME)
 
 re		:	fclean all
 
-run		:	$(NAME)
-			./$(NAME)
-
-PHONY	:	all clean fclean re run 
+PHONY	:	all clean fclean re

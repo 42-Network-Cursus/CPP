@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:47:18 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/08 15:37:32 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/12 10:26:43 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 # include <iostream>
 # include <ostream>
 # include <string>
-# include <cstdlib>
 # include <iomanip>
-# include <sstream>
+# include <cstdio>
 
 class PhoneBook 
 {

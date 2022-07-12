@@ -3,6 +3,8 @@
 Brain::Brain()
 {
 	std::cout << "* Brain default constructor called *" << std::endl;
+	for (int i = 0; i < NB_OF_IDEAS; i++)
+		this->_ideas[i] = "Idea nb " + to_string(i);
 }
 
 Brain::~Brain()
@@ -19,6 +21,13 @@ Brain::Brain(const Brain& brain)
 Brain& Brain::operator=(const Brain& brain)
 {
 	std::cout << "* Brain = operator called *" << std::endl;
-	*this = brain;
+	
+	for (int i = 0; i < NB_OF_IDEAS; i++)
+		this->_ideas[i] = brain.getIdea(i);
 	return (*this);
+}
+
+std::string	Brain::getIdea(int idx)
+{
+	return(this->_ideas[idx]);
 }

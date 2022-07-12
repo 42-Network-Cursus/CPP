@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:58:57 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 11:59:04 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/12 13:15:51 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 
 	std::cout << "Printing values of..." << std::endl;
 	std::cout << "brain: " << brain << std::endl;
-	std::cout << "brainPTR: " << brainPTR << std::endl;
+	std::cout << "brainPTR: " << *brainPTR << std::endl;
 	std::cout << "brainREF: " << brainREF << std::endl << std::endl;
 	return (0);
 }

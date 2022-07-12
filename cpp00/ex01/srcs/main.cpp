@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:47:25 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/08 15:37:58 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/12 10:31:47 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	handleSigint(int signum)
 {
 	(void)signum;
-	std::cout << std::endl << ": Use EXIT to quit" << std::endl;
+	std::cout << std::endl << "Use EXIT to quit" << std::endl;
 }
 
 int	main()
@@ -31,11 +31,11 @@ int	main()
 	{
 		std::cout << "Enter ADD, SEARCH or EXIT." << std::endl;
 		std::getline(std::cin, input);
-		if (input.length() == 0)
+		if (std::cin.eof() || std::cin.fail()) // Handle ctrl + D
 		{
     		std::cin.clear();
-			input.clear();
-			std::cout << std::endl;
+			clearerr(stdin);
+			std::cout << std::endl << "Use EXIT to quit" << std::endl;
 		}
 		if (input == "ADD")
 			directory.addContact();
@@ -46,9 +46,6 @@ int	main()
 			std::cout << "Exit program. Sure hope you saved those contacts elsewhere!" << std::endl;
 			return (0);
 		}
-		// std::cin.clear();
-		// if (std::cin.eof())
-		// 	std::cin.ignore(1, '\n');
 	}
 	return (0);
 }
