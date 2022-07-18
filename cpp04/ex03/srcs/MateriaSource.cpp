@@ -4,7 +4,7 @@ MateriaSource::MateriaSource()
 {
 	//Constructor
 	for (int i = 0; i < INVSIZE; i++)
-		this->_storage[i] = nullptr;
+		this->_storage[i] = NULL;
 }
 
 MateriaSource::MateriaSource(MateriaSource const & rhs)
@@ -34,7 +34,7 @@ void MateriaSource::learnMateria(AMateria* m)
 {
 	for (int i = 0; i < INVSIZE; i++)
 	{
-		if (this->_storage[i] == nullptr)
+		if (this->_storage[i] == NULL)
 		{
 			this->_storage[i] = m;
 			break ;

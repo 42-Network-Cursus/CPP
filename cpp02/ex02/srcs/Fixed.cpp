@@ -44,11 +44,12 @@ Fixed::Fixed(const float floatNumber)
 /* --- COPY CONSTRUCTOR ---*/
 /***************************/
 
-Fixed::Fixed(const Fixed& copy) : _fixedNumber(copy._fixedNumber)
+Fixed::Fixed(Fixed const & copy)
 {
 	#ifdef ANNOUNCE
 		std::cout << "Copy constructor called" << std::endl;
 	#endif
+	*this = copy;
 }
 
 /************************/
@@ -66,16 +67,16 @@ Fixed::~Fixed(void)
 /* --- OPERATOR OVERLOAD ---*/
 /****************************/
 
-Fixed& Fixed::operator=(const Fixed& fixed)
+Fixed& Fixed::operator=(Fixed const & fixed)
 {
 	#ifdef ANNOUNCE
 		std::cout << "Copy assignment operator called" << std::endl;
 	#endif
-	this->_fixedNumber = fixed._fixedNumber;
+	this->_fixedNumber = fixed.getRawBits();
 	return (*this);
 }
 
-std::ostream&	operator<<(std::ostream& os, const Fixed& fixed)
+std::ostream&	operator<<(std::ostream& os, Fixed const & fixed)
 {
 	os << fixed.toFloat() << std::endl;
 	return (os);
@@ -114,7 +115,7 @@ Fixed	Fixed::min(Fixed& a, Fixed& b)
 		return (b);
 }
 
-const Fixed	Fixed::min(const Fixed& a, const Fixed& b)
+const Fixed	Fixed::min(Fixed const & a, Fixed const & b)
 {
 	if (a < b)
 		return (a);
@@ -130,7 +131,7 @@ Fixed	Fixed::max(Fixed& a, Fixed& b)
 		return (a);
 }
 
-const Fixed	Fixed::max(const Fixed& a, const Fixed& b)
+const Fixed	Fixed::max(Fixed const & a, Fixed const & b)
 {
 	if (a < b)
 		return (b);

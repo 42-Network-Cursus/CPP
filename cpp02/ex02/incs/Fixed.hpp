@@ -27,7 +27,7 @@ public:
 	Fixed(void); //Default constructor
 	Fixed(const Fixed& copy); //Copy constructor
 	~Fixed(void); //Deconstructor
-	Fixed&	operator=(const Fixed& fixed); //Overloaded assignment operator
+	Fixed&	operator=(Fixed const & fixed); //Overloaded assignment operator
 
 	Fixed(const int intNumber);
 	Fixed(const float floatNumber); 
@@ -38,30 +38,31 @@ public:
 	float	toFloat(void) const;
 	int		toInt(void) const;
 
-	bool operator>(const Fixed& fixed) const;
-	bool operator<(const Fixed& fixed) const;
-	bool operator>=(const Fixed& fixed) const;
-	bool operator<=(const Fixed& fixed) const;
-	bool operator==(const Fixed& fixed) const;
-	bool operator!=(const Fixed& fixed) const;
+	bool operator>(Fixed const & fixed) const;
+	bool operator<(Fixed const & fixed) const;
+	bool operator>=(Fixed const & fixed) const;
+	bool operator<=(Fixed const & fixed) const;
+	bool operator==(Fixed const & fixed) const;
+	bool operator!=(Fixed const & fixed) const;
 
-	Fixed operator+(const Fixed& fixed);
-	Fixed operator-(const Fixed& fixed);
-	Fixed operator*(const Fixed& fixed);
-	Fixed operator/(const Fixed& fixed);
+	Fixed operator+(Fixed const & fixed);
+	Fixed operator-(Fixed const & fixed);
+	Fixed operator*(Fixed const & fixed);
+	Fixed operator/(Fixed const & fixed);
 
+	//How do they work ???
 	Fixed& operator++(void); //prefix
 	Fixed operator++(int zero); //postfix
 	Fixed& operator--(void); //prefix
 	Fixed operator--(int zero); //postfix
 
 	static Fixed		min(Fixed& a, Fixed& b);
-	static const Fixed	min(const Fixed& a, const Fixed& b);
+	static const Fixed	min(Fixed const & a, Fixed const & b);
 	static Fixed		max(Fixed& a, Fixed& b);
-	static const Fixed	max(const Fixed& a, const Fixed& b);
+	static const Fixed	max(Fixed const & a, Fixed const & b);
 };
 
-std::ostream&	operator<<(std::ostream& os, Fixed const& fixed);
+std::ostream&	operator<<(std::ostream& os, Fixed const & fixed);
 int	myPow(int base, int power);
 
 #endif

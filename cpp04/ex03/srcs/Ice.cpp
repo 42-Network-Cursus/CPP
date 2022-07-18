@@ -19,7 +19,7 @@ AMateria(copy.getType())
 
 Ice& Ice::operator=(Ice const & rhs)
 {
-//	*this = rhs;
+	*this = rhs;
 	return (*this);
 }
 

@@ -23,13 +23,13 @@ Fixed::Fixed(void) : _fixedNumber(0)
 
 Fixed::Fixed(const int intNumber)
 {
-	this->_fixedNumber = intNumber << _bits;
+	this->_fixedNumber = intNumber << this->_bits;
 	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float floatNumber)
 {
-	int power = myPow(2, _bits);
+	int power = myPow(2, this->_bits);
 	this->_fixedNumber = roundf(floatNumber * power);
 	std::cout << "Float constructor called" <<  std::endl;
 }
@@ -38,9 +38,10 @@ Fixed::Fixed(const float floatNumber)
 /* --- COPY CONSTRUCTOR ---*/
 /***************************/
 
-Fixed::Fixed(const Fixed& copy) : _fixedNumber(copy._fixedNumber)
+Fixed::Fixed(const Fixed& copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = copy;
 }
 
 /************************/
@@ -59,11 +60,12 @@ Fixed::~Fixed(void)
 Fixed& Fixed::operator=(const Fixed& fixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_fixedNumber = fixed._fixedNumber;
+	this->_fixedNumber = fixed.getRawBits();
 	return (*this);
 }
 
-std::ostream&	operator<<(std::ostream& os, const Fixed& fixed)
+//!! Not a member function !!
+std::ostream&	operator<<(std::ostream& os, Fixed const & fixed)
 {
 	os << fixed.toFloat() << std::endl;
 	return (os);

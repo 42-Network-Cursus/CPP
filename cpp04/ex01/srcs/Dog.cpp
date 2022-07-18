@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : Animal()
 {
 	this->type = "Dog";
 	std::cout << "* Dog default constructor called *" << std::endl;
@@ -13,7 +13,7 @@ Dog::~Dog()
 	std::cout << "* Dog default deconstructor called *" << std::endl;
 }
 
-Dog::Dog(const Dog& dog)
+Dog::Dog(const Dog& dog) : Animal()
 {
 	*this = dog;
 	std::cout << "* Dog copy constructor called *" << std::endl;
@@ -33,5 +33,5 @@ void	Dog::makeSound() const
 
 void	Dog::haveIdea(int idx)
 {
-	std::cout << this->_brain.getIdea(idx) << std::endl;
+	std::cout << this->_brain->getIdea(idx) << std::endl;
 }

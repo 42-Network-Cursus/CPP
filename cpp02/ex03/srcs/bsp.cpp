@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//Given Triangle ABC
+//Given point P
+//We check on what side of each side of the triangle the point stands.
+//Ex: line AB: we check if point P is on the same side of the line
+//	  as point C
+//If point P is on the same side of the three sides of the triangle as the third
+//point of the triangle, then point P is inside the triangle
+
 #include "Point.hpp"
 
 Point	getVector(Fixed x, Fixed y)

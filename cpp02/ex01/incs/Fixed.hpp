@@ -20,15 +20,15 @@ class Fixed
 {
 private:
 	int					_fixedNumber;
-	const static int	_bits = 8;
+	static int const	_bits = 8;
 public:
 	Fixed(void); //Default constructor
 	Fixed(const Fixed& copy); //Copy constructor
 	~Fixed(void); //Deconstructor
 	Fixed&	operator=(const Fixed& fixed); //Overloaded assignment operator
 
-	Fixed(const int intNumber);
-	Fixed(const float floatNumber); 
+	Fixed(int const intNumber);
+	Fixed(float const floatNumber); 
 
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
@@ -37,7 +37,7 @@ public:
 	int		toInt(void) const;
 };
 
-std::ostream&	operator<<(std::ostream& os, const Fixed& fixed);
+std::ostream&	operator<<(std::ostream& os, Fixed const & fixed);
 int	myPow(int base, int power);
 
 #endif

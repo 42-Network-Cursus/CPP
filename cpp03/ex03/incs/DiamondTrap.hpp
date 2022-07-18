@@ -10,6 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//Normal heritage: 
+// A ; B : A ; C : B
+// C inherits from B who inherits from A
+//Diamond problem:
+// A 
+// B : A
+// C : A
+// D : B, C
+// B and C both inherit from A
+// D inherits from both B and C
+// D has a diamond problem : Which A is correct ?
+// A - B \
+//         D
+// A - C /
+// Solution : inheritance of A is virtual
+//   / B \
+// A       D
+//   \ C /
+//virtual = ensuring that the memory layout does not duplicate the base class members.
+
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 

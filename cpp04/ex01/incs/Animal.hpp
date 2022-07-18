@@ -16,6 +16,7 @@ public:
 
 	virtual void makeSound() const;
 	std::string	getType() const;
+	virtual void haveIdea(int idx);
 };
 
 #endif

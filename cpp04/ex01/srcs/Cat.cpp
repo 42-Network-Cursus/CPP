@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {	
 	std::cout << "* Cat default constructor called *" << std::endl;
 	this->type = "Cat";
@@ -13,9 +13,9 @@ Cat::~Cat()
 	std::cout << "* Cat default deconstructor called *" << std::endl;
 }
 
-Cat::Cat(const Cat& Cat)
+Cat::Cat(Cat const & rhs) : Animal()
 {
-	*this = Cat;
+	*this = rhs;
 	std::cout << "* Cat copy constructor called *" << std::endl;
 }
 
@@ -33,5 +33,5 @@ void	Cat::makeSound() const
 
 void	Cat::haveIdea(int idx)
 {
-	std::cout << this->_brain.getIdea(idx) << std::endl;
+	std::cout << this->_brain->getIdea(idx) << std::endl;
 }

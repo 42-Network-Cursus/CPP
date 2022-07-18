@@ -3,7 +3,7 @@
 Character::Character() : _name("Default")
 {
 	for (int i = 0; i < INVSIZE; i++)
-		_storage[i] = nullptr;
+		_storage[i] = NULL;
 	//Constructor
 }
 
@@ -11,9 +11,9 @@ Character::Character(std::string const name) :
  _name(name)
 {
 	for (int i = 0; i < INVSIZE; i++)
-		_storage[i] = nullptr;
+		_storage[i] = NULL;
 	for (int i = 0; i < GROUNDSIZE; i++)
-		_mUnequiped[i] = nullptr;
+		_mUnequiped[i] = NULL;
 	//Name Constructor
 }
 
@@ -57,7 +57,7 @@ void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < INVSIZE; i++)
 	{
-		if (this->_storage[i] == nullptr)
+		if (this->_storage[i] == NULL)
 		{
 			this->_storage[i] = m;
 			break ;
@@ -69,9 +69,10 @@ bool Character::addToList(AMateria* storage[], int idx)
 {
 	for (int i = 0; i < GROUNDSIZE; i++)
 	{
-		if (this->_mUnequiped[i] == nullptr)
+		if (this->_mUnequiped[i] == NULL)
 		{
 			this->_mUnequiped[i] = storage[idx];
+			storage[idx] = NULL;
 			return true;
 		}
 	}
@@ -82,12 +83,12 @@ void Character::unequip(int idx)
 {
 	if (idx < INVSIZE)
 	{
-		if (this->_storage[idx] != nullptr)
+		if (this->_storage[idx] != NULL)
 		{	
 			if (addToList(this->_storage, idx) == false)
 				std::cout << "No more space on the ground. Can't throw any more materias." << std::endl;
 			else
-				this->_storage[idx] = nullptr;
+				this->_storage[idx] = NULL;
 		}
 	}
 }
@@ -96,7 +97,7 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (idx < INVSIZE)
 	{
-		if (this->_storage[idx] != nullptr)
+		if (this->_storage[idx] != NULL)
 			this->_storage[idx]->use(target);
 	}
 }

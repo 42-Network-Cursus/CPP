@@ -33,3 +33,8 @@ std::string	Animal::getType() const
 {
 	return (this->type);
 }
+
+void Animal::haveIdea(int idx)
+{
+	(void)idx;
+}

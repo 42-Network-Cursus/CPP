@@ -16,7 +16,7 @@ public:
 	Brain(const Brain& brain);
 	Brain& operator=(const Brain& brain);
 
-	std::string	getIdea(int idx);
+	std::string	getIdea(int idx) const;
 };
 
 #endif

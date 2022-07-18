@@ -16,18 +16,25 @@
 /* INCREMENT && DECREMENT */
 /**************************/
 
+//To distinguish between the two, 
+//the following rule is observed: 
+//The prefix form of the operator is declared 
+//exactly the same way as any other unary operator; 
+//the postfix form accepts an extra argument of type int.
+
 Fixed& Fixed::operator++(void) //prefix
 {
 	this->_fixedNumber++;
 	return (*this);
 }
 
+//Example: value of var A is 1
 Fixed Fixed::operator++(int zero) //postfix
 {
 	(void)zero;
-	Fixed old(*this);
-	operator++();
-	return (old);
+	Fixed old(*this); // new var B takes current value of var A= 1
+	operator++(); //operator is called on 'this' of var A, thus var A = 2 
+	return (old); //return var B still = 1
 }
 
 Fixed& Fixed::operator--(void) //prefix
@@ -48,7 +55,7 @@ Fixed Fixed::operator--(int zero) //postfix
 /* ARITHMETIC OPERATIONS */
 /*************************/
 
-Fixed Fixed::operator+(const Fixed& fixed)
+Fixed Fixed::operator+(Fixed const & fixed)
 {
 	Fixed ret;
 	ret.setRawBits(this->_fixedNumber + fixed.getRawBits());
@@ -56,20 +63,20 @@ Fixed Fixed::operator+(const Fixed& fixed)
 
 }
 
-Fixed Fixed::operator-(const Fixed& fixed)
+Fixed Fixed::operator-(Fixed const & fixed)
 {
 	Fixed ret;
 	ret.setRawBits(this->_fixedNumber - fixed.getRawBits());
 	return (ret);
 }
 
-Fixed Fixed::operator*(const Fixed& fixed)
+Fixed Fixed::operator*(Fixed const & fixed)
 {
 	Fixed ret(this->toFloat() * fixed.toFloat());
 	return (ret);
 }
 
-Fixed Fixed::operator/(const Fixed& fixed)
+Fixed Fixed::operator/(Fixed const & fixed)
 {
 	Fixed ret(this->toFloat() / fixed.toFloat());
 	return (ret);
@@ -79,42 +86,42 @@ Fixed Fixed::operator/(const Fixed& fixed)
 /* COMPARING OPERATIONS */
 /************************/
 
-bool Fixed::operator>(const Fixed& fixed) const
+bool Fixed::operator>(Fixed const & fixed) const
 {
 	if (this->_fixedNumber > fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator<(const Fixed& fixed) const
+bool Fixed::operator<(Fixed const & fixed) const
 {
 	if (this->_fixedNumber < fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator>=(const Fixed& fixed) const
+bool Fixed::operator>=(Fixed const & fixed) const
 {
 	if (this->_fixedNumber >= fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator<=(const Fixed& fixed) const
+bool Fixed::operator<=(Fixed const & fixed) const
 {
 	if (this->_fixedNumber <= fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator==(const Fixed& fixed) const
+bool Fixed::operator==(Fixed const & fixed) const
 {
 	if (this->_fixedNumber == fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator!=(const Fixed& fixed) const
+bool Fixed::operator!=(Fixed const & fixed) const
 {
 	if (this->_fixedNumber != fixed.getRawBits())
 		return (true);

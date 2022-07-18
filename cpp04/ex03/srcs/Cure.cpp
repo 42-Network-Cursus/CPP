@@ -19,7 +19,7 @@ AMateria(copy.getType())
 
 Cure& Cure::operator=(Cure const & rhs)
 {
-//	*this = rhs;
+	*this = rhs;
 	return (*this);
 }
 

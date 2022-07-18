@@ -5,6 +5,8 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 #include <new>
+#include <cstdlib>
+#include <unistd.h>
 
 int main()
 {
@@ -23,6 +25,7 @@ int main()
 	{
 		std::cout << "--- Animal array ---" << std::endl;
 		Animal* tab[10];
+
 		for (int i = 0; i < 10; i++)
 		{
 			std::cout << i + 1 << "/" << std::endl;
@@ -30,8 +33,18 @@ int main()
 				tab[i] = new Dog();
 			else
 				tab[i] = new Cat();
+
+			std::cout << "Type: " << tab[i]->getType() << std::endl;
+			tab[i]->makeSound();
+			srand(time(NULL));
+			int idx = rand() % 100;
+			tab[i]->haveIdea(idx);
+			sleep(1);
 			std::cout << std::endl;
 		}
+
+		
+
 		for (int i = 9; i >= 0; i--)
 		{
 			std::cout << i + 1 << "/" << std::endl;

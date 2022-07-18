@@ -1,10 +1,20 @@
 #include "Brain.hpp"
 
+
+#include <sstream>
+
+std::string IntToString(int nb)
+{
+    std::ostringstream temp;
+    temp << nb;
+    return temp.str();
+}
+
 Brain::Brain()
 {
 	std::cout << "* Brain default constructor called *" << std::endl;
 	for (int i = 0; i < NB_OF_IDEAS; i++)
-		this->_ideas[i] = "Idea nb " + to_string(i);
+		this->_ideas[i] = "Idea nb " + IntToString(i + 1);
 }
 
 Brain::~Brain()
@@ -18,7 +28,7 @@ Brain::Brain(const Brain& brain)
 	*this = brain;
 }
 
-Brain& Brain::operator=(const Brain& brain)
+Brain& Brain::operator=(Brain const& brain)
 {
 	std::cout << "* Brain = operator called *" << std::endl;
 	
@@ -27,7 +37,7 @@ Brain& Brain::operator=(const Brain& brain)
 	return (*this);
 }
 
-std::string	Brain::getIdea(int idx)
+std::string	Brain::getIdea(int idx) const
 {
 	return(this->_ideas[idx]);
 }
