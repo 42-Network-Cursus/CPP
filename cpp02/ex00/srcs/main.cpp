@@ -6,12 +6,11 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:23:15 by cwastche          #+#    #+#             */
-/*   Updated: 2022/06/29 13:23:20 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/18 10:10:00 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 int main( void ) 
 {

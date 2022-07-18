@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:22:38 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/08 15:47:37 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/18 13:40:30 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ Fixed::Fixed(void) : _fixedNumber(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& copy)
+Fixed::Fixed(Fixed const & rhs)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_fixedNumber = copy.getRawBits();
+	this->_fixedNumber = rhs.getRawBits();
 }
 
 Fixed::~Fixed(void)
@@ -28,10 +28,10 @@ Fixed::~Fixed(void)
 	std::cout << "Deconstructor called" << std::endl;
 }
 
-Fixed& Fixed::operator=(const Fixed& fixed)
+Fixed& Fixed::operator=(Fixed const & rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_fixedNumber = fixed.getRawBits();
+	this->_fixedNumber = rhs.getRawBits();
 	return (*this);
 }
 
