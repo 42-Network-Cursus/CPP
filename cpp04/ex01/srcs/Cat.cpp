@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:09:17 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 15:54:18 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/23 18:02:37 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ Cat::Cat(Cat const & rhs) : Animal()
 Cat& Cat::operator=(const Cat& rhs)
 {
 	std::cout << "* Cat assignment operator called *" << std::endl;
-	this->_brain = new Brain();
 	this->type = rhs.type;
 	*(this->_brain) = *(rhs._brain);
 	return (*this);
