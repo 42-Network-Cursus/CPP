@@ -1,8 +1,5 @@
 #include "Brain.hpp"
 
-
-#include <sstream>
-
 std::string IntToString(int nb)
 {
     std::ostringstream temp;
@@ -22,16 +19,16 @@ Brain::~Brain()
 	std::cout << "* Brain deconstructor called *" << std::endl;
 }
 
-Brain::Brain(const Brain& brain)
+Brain::Brain(Brain const & brain)
 {
 	std::cout << "* Brain copy constructor called *" << std::endl;
-	*this = brain;
+	for (int i = 0; i < NB_OF_IDEAS; i++)
+		this->_ideas[i] = brain.getIdea(i);
 }
 
-Brain& Brain::operator=(Brain const& brain)
+Brain& Brain::operator=(Brain const & brain)
 {
 	std::cout << "* Brain = operator called *" << std::endl;
-	
 	for (int i = 0; i < NB_OF_IDEAS; i++)
 		this->_ideas[i] = brain.getIdea(i);
 	return (*this);
@@ -40,4 +37,9 @@ Brain& Brain::operator=(Brain const& brain)
 std::string	Brain::getIdea(int idx) const
 {
 	return(this->_ideas[idx]);
+}
+
+void	Brain::setIdea(std::string idea, int idx)
+{
+	this->_ideas[idx] = idea;
 }

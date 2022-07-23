@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:10:14 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 11:32:17 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cure.hpp"
 
 Cure::Cure() : 
@@ -19,7 +31,8 @@ AMateria(copy.getType())
 
 Cure& Cure::operator=(Cure const & rhs)
 {
-	*this = rhs;
+	if (this != &rhs)
+		*this = rhs;
 	return (*this);
 }
 

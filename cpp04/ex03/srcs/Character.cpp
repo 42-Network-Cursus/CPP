@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:10:13 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 16:30:59 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Character.hpp"
 
 Character::Character() : _name("Default")
@@ -26,13 +38,13 @@ Character::~Character()
 	//Deconstructor
 }
 
-Character::Character(Character const & copy) : 
-_name(copy._name)
+Character::Character(Character const & rhs) : 
+_name(rhs._name)
 {
 	for (int i = 0; i < INVSIZE; i++)
 	{
 		delete this->_storage[i];
-		this->_storage[i] = copy._storage[i];
+		this->_storage[i] = rhs._storage[i];
 	}
 	//Copy constructor
 }

@@ -1,8 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:09:45 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 15:59:38 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Brain.hpp"
+
+std::string IntToString(int nb)
+{
+    std::ostringstream temp;
+    temp << nb;
+    return temp.str();
+}
 
 Brain::Brain()
 {
 	std::cout << "* Brain default constructor called *" << std::endl;
+	for (int i = 0; i < NB_OF_IDEAS; i++)
+		this->_ideas[i] = "Idea nb " + IntToString(i + 1);
 }
 
 Brain::~Brain()
@@ -13,12 +34,24 @@ Brain::~Brain()
 Brain::Brain(const Brain& brain)
 {
 	std::cout << "* Brain copy constructor called *" << std::endl;
-	*this = brain;
+	for (int i = 0; i < NB_OF_IDEAS; i++)
+		this->_ideas[i] = brain.getIdea(i);
 }
 
-Brain& Brain::operator=(const Brain& brain)
+Brain& Brain::operator=(Brain const & brain)
 {
 	std::cout << "* Brain = operator called *" << std::endl;
-	*this = brain;
+	for (int i = 0; i < NB_OF_IDEAS; i++)
+		this->_ideas[i] = brain.getIdea(i);
 	return (*this);
+}
+
+std::string	Brain::getIdea(int idx) const
+{
+	return(this->_ideas[idx]);
+}
+
+void	Brain::setIdea(std::string idea, int idx)
+{
+	this->_ideas[idx] = idea;
 }

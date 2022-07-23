@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:10:11 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 11:31:35 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AMateria.hpp"
 
 AMateria::AMateria() : _type("empty")
@@ -17,7 +29,8 @@ AMateria::AMateria(AMateria const & copy) : _type(copy.getType())
 
 AMateria& AMateria::operator=(AMateria const & rhs)
 {
-	*this = rhs;
+	if (this != &rhs)
+		*this = rhs;
 	return (*this);
 }
 

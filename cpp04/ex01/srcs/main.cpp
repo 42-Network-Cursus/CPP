@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:09:22 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 15:53:57 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Animal.hpp"
@@ -23,6 +35,31 @@ int main()
 		std::cout << std::endl;
 	}
 	{
+		std::cout << "--- Brain deep copy ---" << std::endl;
+		
+		Dog Wouf;
+		std::cout << "Wouf Brain memory address :";
+		Wouf.printBrainAddress();
+
+		Wouf.getIdea(1);
+		Wouf.setIdea("This is a dog", 1);
+		Dog Waf = Wouf;
+		std::cout << "Waf Brain memory address :";
+		Waf.printBrainAddress();
+		Waf.getIdea(1);
+
+		Cat Miaow;
+		std::cout << "Miaow Brain memory address :";
+		Miaow.printBrainAddress();
+
+		Miaow.getIdea(1);
+		Miaow.setIdea("This is a cat", 1);
+		Cat Meow = Miaow;
+		std::cout << "Meow Brain memory address :";
+		Meow.printBrainAddress();
+		Meow.getIdea(1);
+	}
+	{
 		std::cout << "--- Animal array ---" << std::endl;
 		Animal* tab[10];
 
@@ -39,6 +76,8 @@ int main()
 			srand(time(NULL));
 			int idx = rand() % 100;
 			tab[i]->haveIdea(idx);
+			std::cout << "Brain address in memory: ";
+			tab[i]->printBrainAddress();
 			sleep(1);
 			std::cout << std::endl;
 		}

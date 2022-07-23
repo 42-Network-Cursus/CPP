@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:09:32 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 15:57:26 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AANIMAL_HPP
 # define AANIMAL_HPP
 
@@ -22,6 +34,8 @@ public:
 
 	virtual void makeSound() const = 0; //pure virtual function
 	std::string	getType() const;
+	virtual void haveIdea(int idx);
+	virtual void printBrainAddress();
 };
 
 #endif

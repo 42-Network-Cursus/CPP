@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:09:14 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 14:37:32 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 Animal::Animal()
@@ -37,4 +49,9 @@ std::string	Animal::getType() const
 void Animal::haveIdea(int idx)
 {
 	(void)idx;
+}
+
+void	Animal::printBrainAddress()
+{
+	std::cout << "Animals don't have brains" << std::endl;
 }

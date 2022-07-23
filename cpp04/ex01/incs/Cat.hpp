@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:09:05 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 15:54:32 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CAT_HPP
 # define CAT_HPP
 
@@ -16,7 +28,11 @@ public:
 	virtual Cat& operator=(const Cat& Cat);
 
 	void	makeSound() const;
-	void	haveIdea(int idx);
+	void	getIdea(int idx);
+
+	void	printBrainAddress();
+	void	setIdea(std::string idea, int idx);
+
 };
 
 #endif

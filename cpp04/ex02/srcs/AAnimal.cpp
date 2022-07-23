@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:09:43 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 16:02:54 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AAnimal.hpp"
 
 AAnimal::AAnimal()
@@ -32,4 +44,14 @@ void	AAnimal::makeSound() const
 std::string	AAnimal::getType() const
 {
 	return (this->type);
+}
+
+void AAnimal::haveIdea(int idx)
+{
+	(void)idx;
+}
+
+void	AAnimal::printBrainAddress()
+{
+	std::cout << "Animals don't have brains" << std::endl;
 }

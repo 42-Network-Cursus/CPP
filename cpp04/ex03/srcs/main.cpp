@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:10:19 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 16:51:19 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <new>
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
@@ -43,9 +55,11 @@ int main()
 
 		ICharacter* jason = new Character("Jason");
 		AMateria* tmp;
-		tmp = src->createMateria("ice");
+		(void)jason;
+		(void)tmp;
 		for (int i = 0; i < 100; i++)
 		{
+			tmp = src->createMateria("ice");
 			jason->equip(tmp);
 			jason->unequip(0);
 		}

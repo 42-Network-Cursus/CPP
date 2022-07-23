@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 11:10:02 by cwastche          #+#    #+#             */
+/*   Updated: 2022/07/23 16:53:11 by cwastche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef Character_HPP
 # define Character_HPP
 
@@ -7,7 +19,7 @@
 # include "AMateria.hpp"
 
 # define INVSIZE 4
-# define GROUNDSIZE 1024
+# define GROUNDSIZE 10
 
 class Character : public ICharacter
 {
