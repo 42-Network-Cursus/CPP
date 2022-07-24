@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:09:41 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 11:09:42 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:04:21 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongCat: public WrongAnimal
 {
 public:
 	WrongCat();
-	~WrongCat();
+	virtual ~WrongCat();
 	WrongCat(const WrongCat& WrongCat);
 	WrongCat& operator=(const WrongCat& WrongCat);
 

@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:09:14 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 14:37:32 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:00:32 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ std::string	Animal::getType() const
 	return (this->type);
 }
 
-void Animal::haveIdea(int idx)
+void Animal::getIdea(int idx)
 {
 	(void)idx;
 }

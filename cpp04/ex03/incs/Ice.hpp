@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:05 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 11:10:05 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:06:55 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Ice : public AMateria
 {
 public:
 	Ice();
-	~Ice();
+	virtual ~Ice();
 	Ice(Ice const & copy);
 	Ice& operator=(Ice const & rhs);
 

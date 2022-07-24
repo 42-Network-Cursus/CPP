@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:09:05 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 15:54:32 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 12:57:41 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ private:
 	Brain* _brain;
 public:
 	Cat();
-	~Cat();
+	virtual ~Cat();
 	Cat(const Cat& Cat);
 	virtual Cat& operator=(const Cat& Cat);
 
-	void	makeSound() const;
-	void	getIdea(int idx);
+	virtual void	makeSound() const;
+	virtual void	getIdea(int idx);
 
-	void	printBrainAddress();
+	virtual void	printBrainAddress();
 	void	setIdea(std::string idea, int idx);
 
 };

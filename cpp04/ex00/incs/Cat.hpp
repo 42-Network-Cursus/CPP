@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:15:32 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/12 11:15:33 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 12:53:29 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Cat: public Animal
 {
 public:
 	Cat();
-	~Cat();
+	virtual ~Cat();
 	Cat(const Cat& Cat);
 	Cat& operator=(const Cat& Cat);
 
-	void	makeSound() const;
+	void virtual makeSound() const;
 };
 
 #endif

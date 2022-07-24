@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:06 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 11:10:07 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:50:47 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	virtual void equip(AMateria* m) = 0;
 	virtual void unequip(int idx) = 0;
 	virtual void use(int idx, ICharacter& target) = 0;
-};
+	virtual void getStorageMemoryAddress(void) {};
+	};
 
 #endif

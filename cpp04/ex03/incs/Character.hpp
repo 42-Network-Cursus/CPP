@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:02 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 16:53:11 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:48:30 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,14 @@ public:
 	Character(std::string const name);
 	virtual ~Character();
 	Character(Character const & copy);
-	Character& operator=(Character const & character);
+	virtual Character& operator=(Character const & character);
 
 	virtual std::string const & getName() const;
 	virtual void equip(AMateria* m);
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter& target);
+	
+	virtual void	getStorageMemoryAddress(void);
 
 	bool addToList(AMateria* storage[], int idx);
 };

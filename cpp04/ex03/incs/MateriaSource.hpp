@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:09 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 11:10:10 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:07:36 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ private:
 public:
 	MateriaSource();
 	MateriaSource(MateriaSource const & rhs);
-	~MateriaSource();
+	virtual ~MateriaSource();
 	MateriaSource& operator=(MateriaSource & rhs);
 
-	void learnMateria(AMateria* m);
-	AMateria* createMateria(std::string const & type);
+	virtual void learnMateria(AMateria* m);
+	virtual AMateria* createMateria(std::string const & type);
 };
 
 #endif

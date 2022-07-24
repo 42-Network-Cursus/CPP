@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:09:22 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 15:53:57 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:00:22 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int main()
 			tab[i]->makeSound();
 			srand(time(NULL));
 			int idx = rand() % 100;
-			tab[i]->haveIdea(idx);
+			tab[i]->getIdea(idx);
 			std::cout << "Brain address in memory: ";
 			tab[i]->printBrainAddress();
 			sleep(1);

@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:13 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 16:30:59 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 14:41:16 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Character::Character() : _name("Default")
 {
+	std::cout << "* Character default constructor called *" << std::endl;
 	for (int i = 0; i < INVSIZE; i++)
 		_storage[i] = NULL;
 	//Constructor
@@ -22,6 +23,7 @@ Character::Character() : _name("Default")
 Character::Character(std::string const name) :
  _name(name)
 {
+	std::cout << "* Character name constructor called *" << std::endl;
 	for (int i = 0; i < INVSIZE; i++)
 		_storage[i] = NULL;
 	for (int i = 0; i < GROUNDSIZE; i++)
@@ -41,21 +43,30 @@ Character::~Character()
 Character::Character(Character const & rhs) : 
 _name(rhs._name)
 {
+	std::cout << "* Character copy constructor called *" << std::endl;
 	for (int i = 0; i < INVSIZE; i++)
-	{
-		delete this->_storage[i];
-		this->_storage[i] = rhs._storage[i];
-	}
-	//Copy constructor
+		_storage[i] = NULL;
+	for (int i = 0; i < GROUNDSIZE; i++)
+		_mUnequiped[i] = NULL;
+	for (int i = 0; i < INVSIZE; i++)
+		this->equip(rhs._storage[i]->clone());
 }
 
 Character& Character::operator=(Character const & rhs)
 {
+	std::cout << "* Character assignment operator called *" << std::endl;
 	this->_name = rhs._name;
 	for (int i = 0; i < INVSIZE; i++)
 	{
 		delete this->_storage[i];
-		this->_storage[i] = rhs._storage[i];
+		this->_storage[i] = NULL;
+		this->equip(rhs._storage[i]->clone());
+	}
+	for (int i = 0; i < GROUNDSIZE; i++)
+	{
+		delete this->_mUnequiped[i];
+		if (rhs._mUnequiped[i] != NULL)
+			this->_mUnequiped[i] = rhs._mUnequiped[i]->clone();
 	}
 	return (*this);
 }
@@ -112,4 +123,12 @@ void Character::use(int idx, ICharacter& target)
 		if (this->_storage[idx] != NULL)
 			this->_storage[idx]->use(target);
 	}
+}
+
+void	Character::getStorageMemoryAddress(void)
+{
+	for (int i = 0; i < INVSIZE; i++)
+		std::cout << &(this->_storage[i]) << std::endl;
+	std::cout << this << std::endl;
+
 }

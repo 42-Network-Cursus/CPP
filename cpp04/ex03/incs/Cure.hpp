@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:03 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 11:10:04 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:06:44 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cure : public AMateria
 {
 public:
 	Cure();
-	~Cure(); //Virtual ?
+	virtual ~Cure();
 	Cure(Cure const & copy);
 	Cure& operator=(Cure const & rhs);
 

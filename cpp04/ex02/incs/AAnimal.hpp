@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:09:32 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 15:57:26 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 13:03:50 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 
 	virtual void makeSound() const = 0; //pure virtual function
 	std::string	getType() const;
-	virtual void haveIdea(int idx);
+	virtual void getIdea(int idx);
 	virtual void printBrainAddress();
 };
 

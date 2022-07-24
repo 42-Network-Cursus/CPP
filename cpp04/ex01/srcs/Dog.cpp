@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:09:19 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/23 15:51:45 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/24 12:59:51 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ Dog::Dog(Dog const & rhs) : Animal()
 Dog& Dog::operator=(Dog const & rhs)
 {
 	std::cout << "* Dog assignment operator called *" << std::endl;
-	this->_brain = new Brain();
 	this->type = rhs.type;
 	*(this->_brain) = *(rhs._brain);
 	return (*this);
