@@ -15,6 +15,7 @@ private:
 	int			const	_gradeToSign;
 	int 		const	_gradeToExecute;
 public:
+	Form();
 	Form(std::string name, int gradeToSign, int gradeToExecute);
 	virtual ~Form();
 	Form(Form const & copy);
@@ -22,8 +23,8 @@ public:
 
 	std::string	getName() const;
 	bool		getSignature() const;
-	int const	getGradeToSign() const;
-	int const	getGradeToExecute() const;
+	int 		getGradeToSign() const;
+	int 		getGradeToExecute() const;
 
 	void		setSignature(bool sign);
 	void		beSigned(Bureaucrat& bureaucrat);

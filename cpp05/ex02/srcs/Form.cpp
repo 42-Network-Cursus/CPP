@@ -12,8 +12,21 @@ std::ostream&	operator<<(std::ostream& os, Form& form)
 	return (os);
 }
 
+Form::Form() :
+_name(""),
+_signature(false),
+_gradeToSign(150),
+_gradeToExecute(150)
+{
+	//Constructor
+}
+
 Form::Form(std::string name, int gradeToSign, int gradeToExecute)
-try : _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _name(name), _signature(false)
+try : 
+_name(name),
+_signature(false),
+_gradeToSign(gradeToSign),
+_gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign > 150)
 		throw GradeTooLowException();
@@ -55,22 +68,22 @@ std::string	Form::getName() const
 	return (_name);
 }
 
-bool		Form::getSignature() const
+bool	Form::getSignature() const
 {
 	return (_signature);
 }
 
-int const	Form::getGradeToSign() const
+int 	Form::getGradeToSign() const
 {
 	return (_gradeToSign);
 }
 
-int const	Form::getGradeToExecute() const
+int 	Form::getGradeToExecute() const
 {
 	return (_gradeToExecute);
 }
 
-void		Form::setSignature(bool sign)
+void	Form::setSignature(bool sign)
 {
 	_signature = sign;
 }

@@ -6,7 +6,7 @@
 #    By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 16:24:51 by cwastche          #+#    #+#              #
-#    Updated: 2022/07/09 12:44:46 by cwastche         ###   ########.fr        #
+#    Updated: 2022/07/25 19:35:05 by cwastche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ clean	:
 fclean	:	clean
 			@echo $(BRed)"Cleaning up executable...!"
 			@$(RM) $(NAME)
+			@$(RM) *_shrubbery.txt
 			@echo $(BGreen)"✓"
 
 re		:	fclean all

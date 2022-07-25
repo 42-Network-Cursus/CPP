@@ -6,12 +6,19 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:24:43 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/09 11:53:02 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:04:19 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+
+Bureaucrat::Bureaucrat() :
+_name(""),
+_grade(150)
+{
+	//Constructor
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) :
 _name(name),

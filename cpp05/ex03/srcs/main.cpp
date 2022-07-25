@@ -11,7 +11,13 @@ int main()
 		Intern someRandomIntern;
 		Form* rrf = NULL;
 		
-		rrf = someRandomIntern.makeForm("d request", "Bender");
+		rrf = someRandomIntern.makeForm("random form", "Bender");
+	}
+	{
+		Intern someRandomIntern;
+		Form* rrf = NULL;
+		
+		rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
 		if (rrf)
 		{
 			Bureaucrat bcrat1("Dude", 1);
@@ -19,12 +25,15 @@ int main()
 			rrf->execute(bcrat1);
 			delete rrf;
 		}
-	}
-	{
-		Intern someRandomIntern;
-		Form* rrf = NULL;
-		
-		rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+		if (rrf)
+		{
+			Bureaucrat bcrat1("Dude", 1);
+			bcrat1.signForm(*rrf);
+			rrf->execute(bcrat1);
+			delete rrf;
+		}
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 		if (rrf)
 		{
 			Bureaucrat bcrat1("Dude", 1);

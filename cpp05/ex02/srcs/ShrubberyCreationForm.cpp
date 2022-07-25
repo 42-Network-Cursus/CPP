@@ -1,10 +1,17 @@
 #include "ShrubberyCreationForm.hpp"
 
+ShrubberyCreationForm::ShrubberyCreationForm() :
+Form("Shrubbery", 145, 137),
+_target("")
+{
+	//Default constructor
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
 Form("Shrubbery", 145, 137),
 _target(target)
 {
-	//Default constructor
+	//constructor
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
@@ -35,7 +42,7 @@ std::string	ShrubberyCreationForm::getTarget() const
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor)
 {
 	this->checkExecutePrivilege(executor);
-	std::string fileName = this->getTarget() + "_shrubbery";
+	std::string fileName = this->getTarget() + "_shrubbery.txt";
 	std::ofstream	file(fileName);
 	file << "       _-_       " << std::endl;
 	file << "    /~~   ~~\\    " << std::endl;

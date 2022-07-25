@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:24:46 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/09 10:05:16 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:59:12 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
 	std::string const	_name;
 	int					_grade;
 public:
+	Bureaucrat();
 	~Bureaucrat();
 	Bureaucrat(std::string name, int grade);
 	Bureaucrat(Bureaucrat const & copy);

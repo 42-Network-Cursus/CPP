@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:13 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/24 14:41:16 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:42:21 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,7 @@ void	Character::getStorageMemoryAddress(void)
 {
 	for (int i = 0; i < INVSIZE; i++)
 		std::cout << &(this->_storage[i]) << std::endl;
-	std::cout << this << std::endl;
+	
+	std::cout << "Address of object " << this->_name << " " << this << std::endl;
 
 }
