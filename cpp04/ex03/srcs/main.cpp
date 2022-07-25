@@ -30,6 +30,10 @@ int main()
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
 		
 		ICharacter* me = new Character("me");
 		AMateria* tmp;
@@ -54,8 +58,6 @@ int main()
 
 		ICharacter* jason = new Character("Jason");
 		AMateria* tmp;
-		(void)jason;
-		(void)tmp;
 		for (int i = 0; i < 15; i++)
 		{
 			tmp = src->createMateria("ice");
@@ -73,7 +75,6 @@ int main()
 
 		Character* alfred = new Character("Alfred");
 		AMateria* tmp;
-		tmp = src->createMateria("ice");
 		for (int i = 0; i < 4; i++)
 		{
 			tmp = src->createMateria("ice");
@@ -98,7 +99,7 @@ int main()
 
 		Character alfred = Character("Alfred");
 		AMateria* tmp;
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < 2; i++)
 		{
 			tmp = src->createMateria("ice");
 			alfred.equip(tmp);

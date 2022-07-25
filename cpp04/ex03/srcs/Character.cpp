@@ -17,7 +17,8 @@ Character::Character() : _name("Default")
 	std::cout << "* Character default constructor called *" << std::endl;
 	for (int i = 0; i < INVSIZE; i++)
 		_storage[i] = NULL;
-	//Constructor
+	for (int i = 0; i < GROUNDSIZE; i++)
+		_mUnequiped[i] = NULL;
 }
 
 Character::Character(std::string const name) :
@@ -28,16 +29,15 @@ Character::Character(std::string const name) :
 		_storage[i] = NULL;
 	for (int i = 0; i < GROUNDSIZE; i++)
 		_mUnequiped[i] = NULL;
-	//Name Constructor
 }
 
 Character::~Character()
 {
+	std::cout << "* Character destructor called *" << std::endl;
 	for (int i = 0; i < INVSIZE; i++)
 		delete this->_storage[i];
 	for (int i = 0; i < GROUNDSIZE; i++)
 		delete this->_mUnequiped[i];
-	//Deconstructor
 }
 
 Character::Character(Character const & rhs) : 
@@ -49,7 +49,10 @@ _name(rhs._name)
 	for (int i = 0; i < GROUNDSIZE; i++)
 		_mUnequiped[i] = NULL;
 	for (int i = 0; i < INVSIZE; i++)
-		this->equip(rhs._storage[i]->clone());
+	{
+		if (rhs._storage[i])
+			this->equip(rhs._storage[i]->clone());
+	}
 }
 
 Character& Character::operator=(Character const & rhs)
@@ -60,12 +63,13 @@ Character& Character::operator=(Character const & rhs)
 	{
 		delete this->_storage[i];
 		this->_storage[i] = NULL;
-		this->equip(rhs._storage[i]->clone());
+		if (rhs._storage[i])
+			this->equip(rhs._storage[i]->clone());
 	}
 	for (int i = 0; i < GROUNDSIZE; i++)
 	{
 		delete this->_mUnequiped[i];
-		if (rhs._mUnequiped[i] != NULL)
+		if (rhs._mUnequiped[i])
 			this->_mUnequiped[i] = rhs._mUnequiped[i]->clone();
 	}
 	return (*this);
@@ -78,13 +82,21 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	for (int i = 0; i < INVSIZE; i++)
+	int i = 0;
+	for ( ; i < INVSIZE; i++)
 	{
 		if (this->_storage[i] == NULL)
-		{
-			this->_storage[i] = m;
 			break ;
-		}
+	}
+	if (i < INVSIZE)
+	{
+		std::cout << this->_name << " equips a materia of " << m->getType() << " type" << std::endl;
+		this->_storage[i] = m;
+	}
+	else
+	{
+		std::cout << this->_name << "'s inventory is full." << std::endl;
+		delete m;
 	}
 }
 
@@ -94,6 +106,7 @@ bool Character::addToList(AMateria* storage[], int idx)
 	{
 		if (this->_mUnequiped[i] == NULL)
 		{
+			std::cout << this->_name << " unequips a materia of " << storage[idx]->getType() << " type" << std::endl;
 			this->_mUnequiped[i] = storage[idx];
 			storage[idx] = NULL;
 			return true;
@@ -109,7 +122,7 @@ void Character::unequip(int idx)
 		if (this->_storage[idx] != NULL)
 		{	
 			if (addToList(this->_storage, idx) == false)
-				std::cout << "No more space on the ground. Can't throw any more materias." << std::endl;
+				std::cout << "No more space on the ground. Can't unequip any more materias." << std::endl;
 			else
 				this->_storage[idx] = NULL;
 		}
@@ -121,7 +134,10 @@ void Character::use(int idx, ICharacter& target)
 	if (idx < INVSIZE)
 	{
 		if (this->_storage[idx] != NULL)
+		{
+			std::cout << this->_name << " ";
 			this->_storage[idx]->use(target);
+		}
 	}
 }
 

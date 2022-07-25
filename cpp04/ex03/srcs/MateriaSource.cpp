@@ -14,23 +14,28 @@
 
 MateriaSource::MateriaSource()
 {
-	//Constructor
+	std::cout << "* MateriaSource constructor called *" << std::endl;
 	for (int i = 0; i < INVSIZE; i++)
 		this->_storage[i] = NULL;
 }
 
 MateriaSource::MateriaSource(MateriaSource const & rhs)
 {
+	std::cout << "* MateriaSource copy constructor called *" << std::endl;
 	for (int i = 0; i < INVSIZE; i++)
 	{
 		this->_storage[i] = rhs._storage[i];
 	}
-	//Copy constructor
 }
 
 MateriaSource::~MateriaSource()
 {
-	//Deconstructor
+	std::cout << "* MateriaSource destructor called *" << std::endl;
+	for (int i = 0; i < INVSIZE; i++)
+	{
+		if (this->_storage[i])
+			delete this->_storage[i];
+	}
 }
 
 MateriaSource& MateriaSource::operator=(MateriaSource & rhs)
@@ -39,18 +44,24 @@ MateriaSource& MateriaSource::operator=(MateriaSource & rhs)
 	{
 		this->_storage[i] = rhs._storage[i];
 	}
+	std::cout << "* MateriaSource assignment operator called *" << std::endl;
 	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria* m)
 {
-	for (int i = 0; i < INVSIZE; i++)
+	int i = 0;
+	for ( ; i < INVSIZE; i++)
 	{
 		if (this->_storage[i] == NULL)
-		{
-			this->_storage[i] = m;
 			break ;
-		}
+	}
+	if (i < 4)
+		this->_storage[i] = m;
+	else
+	{
+		std::cout << "MateriaSource inventory full" << std::endl;
+		delete m;
 	}
 }
 
