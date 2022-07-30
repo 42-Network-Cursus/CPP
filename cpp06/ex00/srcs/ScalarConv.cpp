@@ -30,7 +30,7 @@ bool	ScalarConv::checkSpecialCases(std::string str)
 		else
 		{
 			if (i == 4)
-				_literal = NAN;
+				_literal = NAN; // NAN is Float type
 			else
 				_literal = static_cast<double>(NAN);
 		}
@@ -42,12 +42,34 @@ bool	ScalarConv::checkSpecialCases(std::string str)
 void	ScalarConv::getLiteralype(std::string str)
 {
 	std::string digits = "0123456789";
-	size_t	pos;
+	size_t	pos = 0;
 
 	if (checkSpecialCases(str))
 		_type = SPECIALCASE;
 	else
 	{
+		if (str[0].compare("-") == 0)
+			pos = 1;
+		pos = str.find_first_not_of(digits, pos);
+		if (str[pos] == '.' OR str[pos] == 'f')
+		{
+			// double or float
+		}
+		else
+		{
+			// Can be int here 
+
+			if (str.size > 1)
+				throw LiteralException();
+			else
+			{
+				_type = CHAR;
+				_literal = str[0];
+			}
+		}
+		
+
+
 		pos = str.find_first_of(digits);
 		if (strPos == std::string::npos)
 		{
@@ -64,12 +86,14 @@ void	ScalarConv::getLiteralype(std::string str)
 			if (str[0] == '-')
 				pos = 1;
 			pos = str.find_first_not_of(digits, pos);
-			if (str[pos] == '.')
+			if (str[pos] == '.' OR str[pos] == 'f')
 			{
 				// double or float
 			}
 			else
-				throw LiteralException();
+			{
+				
+			}
 		}
 	}
 }

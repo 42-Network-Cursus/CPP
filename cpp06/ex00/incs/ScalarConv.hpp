@@ -4,10 +4,10 @@
 # include <limits>
 
 
-# define CHAR		0
+# define CHAR			0
 # define INT			1
-# define FLOAT		2
-# define DOUBLE		3
+# define FLOAT			2
+# define DOUBLE			3
 # define SPECIALCASE	4
 
 class ScalarConv
