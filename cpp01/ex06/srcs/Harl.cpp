@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:19:45 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/12 13:41:24 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/08/21 16:22:13 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ int	levelFilter(std::string level)
 
 void	Harl::complain(std::string level)
 {
+
+	std::map
+
+	var <int><string>
+
 	enum elvl
 	{
 		DEBUG = 1,

@@ -7,19 +7,26 @@
 # include <cmath>
 # include <sstream>
 # include <cstdlib>
+# include <iomanip>
 
 # define CHAR			0
 # define INT			1
 # define FLOAT			2
 # define DOUBLE			3
-# define SPECIALCASE	4
+# define SPECIAL		4
+
+
+char << int << float << double
+
 
 typedef struct s_literal
 {
-	char	Char;
-	int		Int;
-	float	Float;
-	double	Double;
+	unsigned char		Char;
+	int			Int;
+	float		Float;
+	double		Double;
+	std::string	Special;
+	bool		isDisplayable;
 }				t_literal;
 
 class ScalarConv
@@ -42,10 +49,12 @@ public:
 	bool	checkSpecialCases(std::string str);
 
 	void	displayConversions();
-	void	convToChar();
-	void	convToInt();
-	void	convToFloat();
-	void	convToDouble();
+	void	convert();
+
+	char		getChar() const;
+	int			getInt() const;
+	float		getFloat() const;
+	double		getDouble() const;
 
 	class LiteralException : public std::exception
 	{

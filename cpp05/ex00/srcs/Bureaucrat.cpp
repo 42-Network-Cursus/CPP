@@ -6,7 +6,7 @@
 /*   By: cwastche <cwastche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:24:43 by cwastche          #+#    #+#             */
-/*   Updated: 2022/07/27 13:20:46 by cwastche         ###   ########.fr       */
+/*   Updated: 2022/08/21 16:17:26 by cwastche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ _grade(150)
 {
 	//Constructor
 }
+
 
 Bureaucrat::Bureaucrat(std::string name, int grade) :
 _name(name),
@@ -32,6 +33,7 @@ _grade(150)
 			throw GradeTooHighException();
 		else
 			this->_grade = grade;
+		std::cout << fesiufhesf << std::endl;
 	}
 	catch (GradeTooHighException& e)
 	{
