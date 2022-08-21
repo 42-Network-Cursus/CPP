@@ -34,6 +34,7 @@ int main(int ac, char *av[])
 		try 
 		{
 			scalar.getLiteralType(convStr);
+			scalar.displayConversions();
 		}
 		catch (std::exception& e)
 		{
