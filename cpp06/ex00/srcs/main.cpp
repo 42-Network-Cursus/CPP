@@ -35,7 +35,10 @@ int main(int ac, char *av[])
 		{
 			scalar.getLiteralType(convStr);
 			scalar.convert();
-			std::cout << scalar.getChar() << std::endl;
+			if (scalar.getDisplayStatus())
+				std::cout << scalar.getChar() << std::endl;
+			else
+				std::cout << scalar.getSpecial() << std::endl;
 			std::cout << scalar.getInt() << std::endl;
 			std::cout << std::fixed << std::setprecision(1);
 			std::cout << scalar.getFloat() << "f" << std::endl;

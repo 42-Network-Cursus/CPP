@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Aug 18 10:32:17 2022
+# Make data base, printed on Sun Aug 21 21:51:27 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # environment
 DOKANLIBRARY1_LIBRARYPATH_X64 = C:\Program Files\Dokan\Dokan Library-1.4.1\lib\
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_3056_TLHXWOTAYWBHLBIT
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11744_VHJWHFWQICDHPJEH
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -95,7 +95,7 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3056
+VSCODE_PID = 11744
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -141,7 +141,8 @@ MAKEFILES :=
 # environment
 PROMPT = $P$G
 # environment
-CHOCOLATEYLASTPATHUPDATE = 132407843223538680
+CHOCOLAT 
+EYLASTPATHUPDATE = 132407843223538680
 # environment
 LOGONSERVER = \\LAPTOP-5J89K4R6
 # environment
@@ -288,6 +289,6 @@ GNUmakefile:
 # strcache performance: lookups = 26 / hit rate = 11%
 # hash-table stats:
 # Load=23/8192=0%, Rehash=0, Collisions=0/26=0%
-# Finished Make data base on Thu Aug 18 10:32:17 2022
+# Finished Make data base on Sun Aug 21 21:51:27 2022
 
  

@@ -15,18 +15,14 @@
 # define DOUBLE			3
 # define SPECIAL		4
 
-
-char << int << float << double
-
-
 typedef struct s_literal
 {
-	unsigned char		Char;
-	int			Int;
-	float		Float;
-	double		Double;
-	std::string	Special;
-	bool		isDisplayable;
+	unsigned char	Char;
+	int				Int;
+	float			Float;
+	double			Double;
+	std::string		Special;
+	bool			isDisplayable;
 }				t_literal;
 
 class ScalarConv
@@ -55,6 +51,8 @@ public:
 	int			getInt() const;
 	float		getFloat() const;
 	double		getDouble() const;
+	std::string	getSpecial() const;
+	bool		getDisplayStatus();
 
 	class LiteralException : public std::exception
 	{
