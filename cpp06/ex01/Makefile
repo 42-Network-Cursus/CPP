@@ -3,11 +3,11 @@ BRed	=	'\033[1;31m'
 BGreen	=	'\033[1;32m'	
 NC		=	'\033[0m'
 
-NAME	=	
+NAME	=	Serialization
 I		=	incs/
 S		=	srcs/
 O		=	objs/
-SRCS	=	
+SRCS	=	Data.cpp
 SRCS	:=	$(foreach file, $(SRCS), $S$(file))
 OBJS	=	$(SRCS:$S%=$O%.o)
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98 

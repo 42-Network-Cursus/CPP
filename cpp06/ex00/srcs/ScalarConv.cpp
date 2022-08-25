@@ -1,19 +1,30 @@
 #include "ScalarConv.hpp"
 
-// TO DEFINE
 ScalarConv::ScalarConv()
 {
+	// std::cout << "Constructor called" << std::endl;
 	_literal.isDisplayable = false;
 }
-// ScalarConv(char *input);
+
 ScalarConv::~ScalarConv()
 {
-
+	// std::cout << "Destructor called" << std::endl;
 }
-// ScalarConv(ScalarConv const & rhs);
-// ScalarConv& operator=(ScalarConv const & rhs);
 
-bool	ScalarConv::checkSpecialCases(std::string str)
+ScalarConv::ScalarConv(ScalarConv const & rhs)
+{
+	(void)rhs;
+	// std::cout << "Copy constructor not implemented\n";
+}
+
+ScalarConv& ScalarConv::operator=(ScalarConv const & rhs)
+{
+	(void)rhs;
+	// std::cout << "Assigment operator not implemented\n";
+	return (*this);
+}
+
+bool	ScalarConv::isSpecialCase(std::string str)
 {
 	std::string SpecialCases[] = {
 		"-inff",
@@ -34,112 +45,113 @@ bool	ScalarConv::checkSpecialCases(std::string str)
 		}
 	}
 	return (false);
-
-	//fuck this
-	// if (i < 6)
-	// {
-	// 	if (i < 4)
-	// 	{
-	// 		if (i < 2)
-	// 			_literal.Float = std::numeric_limits<float>::infinity();
-	// 		else
-	// 			_literal.Double = std::numeric_limits<double>::infinity();		
-	// 	}
-	// 	else
-	// 	{
-	// 		if (i == 4)
-	// 			_literal.Float = NAN; // NAN is Float type
-	// 		else
-	// 			_literal.Double = static_cast<double>(NAN);
-	// 	}
-	// 	return (true);
-	// }
-	// return (false);
 }
 
+bool	ScalarConv::isChar(std::string & str, std::string & digits)
+{
+	size_t	pos = 0;
+	
+	pos = str.find_first_of(digits, pos);
+	if (pos == std::string::npos && str.length() == 1)
+	{
+		_literal.Char = str[0];
+		_literal.isDisplayable = true;
+		return (true);
+	}
+	return (false);
+}
 
+bool	ScalarConv::isInt(std::string & str, std::string & digits)
+{
+	size_t	pos = 0;
+	std::stringstream	ss;
+	
+	pos = str.find_first_not_of(digits, pos);
+	if (pos == std::string::npos)
+	{
+		ss << str;
+		ss >> _literal.Int;
+		if (is_printable(_literal.Int))
+			_literal.isDisplayable = true;
+		return (true);
+	}
+	return (false);
+}
+
+bool	ScalarConv::isFloat(std::string & str, std::string & digits)
+{
+	size_t	pos = 0;
+
+	pos = str.find_first_not_of(digits, pos);
+	if (str[pos] == 'f')
+	{
+		pos = str.find_first_not_of(digits, pos);
+		if (pos + 1 == str.length())
+		{
+			_literal.Float = static_cast<float>(atof(str.c_str()));
+			if (is_printable(_literal.Float))
+				_literal.isDisplayable = true;
+			return (true);
+		}
+	}
+	else if (str[pos] == '.')
+	{
+		pos++;
+		if (pos != str.find_first_of(digits, pos))
+			return (false);
+		pos = str.find_first_not_of(digits, pos);
+		if (str[pos] == 'f')
+		{
+			if (pos + 1 == str.length())
+			{
+				_literal.Float = static_cast<float>(atof(str.c_str()));
+				if (is_printable(_literal.Float))
+					_literal.isDisplayable = true;
+				return (true);
+			}
+		}
+	}
+	return (false);
+}
+
+bool	ScalarConv::isDouble(std::string & str, std::string & digits)
+{
+	size_t	pos = 0;
+
+	pos = str.find_first_not_of(digits, pos);
+	if (str[pos] == '.')
+	{
+		pos++;
+		if (pos != str.find_first_of(digits, pos))
+			return (false);
+		pos = str.find_first_not_of(digits, pos);
+		if (pos == std::string::npos)
+		{
+			_literal.Double = atof(str.c_str());
+			if (is_printable(_literal.Double))
+				_literal.isDisplayable = true;
+			return (true);
+		}
+	}
+	return (false);
+}
 
 void	ScalarConv::getLiteralType(std::string str)
 {
 	std::string			digits = "0123456789";
-	size_t				pos = 0;
-	std::stringstream	ss;
 
-	if (checkSpecialCases(str))
+	if (isSpecialCase(str))
 		_type = SPECIAL;
+	else if (isChar(str, digits))
+		_type = CHAR;
+	else if (isInt(str, digits))
+		_type = INT;
+	else if (isFloat(str, digits))
+		_type = FLOAT;
+	else if (isDouble(str, digits))
+		_type = DOUBLE;
 	else
-	{
-		pos = str.find_first_of(digits, pos);
-		if (pos == std::string::npos)
-		{
-			if (str.length() == 1)
-			{
-				_type = CHAR;
-				_literal.Char = str[0];
-				_literal.isDisplayable = true;
-			}
-			else
-				throw LiteralException();
-		}
-		else
-		{
-			if (str[0] == '-')
-				pos = 1;
-			else
-				pos = 0;
-			pos = str.find_first_not_of(digits, pos);
-			if (pos == std::string::npos)
-			{
-				_type = INT;
-				ss << str;
-				ss >> _literal.Int;
-				if (is_printable(_literal.Int))
-					_literal.isDisplayable = true;
-			}
-			else if (str[pos] == 'f')
-			{
-				
-				// pos = str.find_first_not_of(digits, pos);
-				if (pos + 1 == str.length())
-				{
-					_type = FLOAT;
-					_literal.Float = static_cast<float>(atof(str.c_str()));
-					if (is_printable(_literal.Float))
-						_literal.isDisplayable = true;
-				}
-				else
-					throw LiteralException();
-			}
-			else if (str[pos] == '.')
-			{
-				pos++;
-				if (pos != str.find_first_of(digits, pos))
-					throw LiteralException();
-				pos = str.find_first_not_of(digits, pos);
-				if (str[pos] == 'f')
-				{
-					if (pos + 1 == str.length())
-					{
-						_type = FLOAT;
-						_literal.Float = static_cast<float>(atof(str.c_str()));
-						if (is_printable(_literal.Float))
-						_literal.isDisplayable = true;
-					}
-					else
-						throw LiteralException();
-				}
-				else if (pos == std::string::npos)
-				{
-					_type = DOUBLE;
-					_literal.Double = atof(str.c_str());
-					if (is_printable(_literal.Double))
-						_literal.isDisplayable = true;
-				}
-				else
-					throw LiteralException();
-			}
-		}
-	}
+		throw LiteralException();
 }
 
 void	ScalarConv::convert()
@@ -176,54 +188,59 @@ void	ScalarConv::convert()
 			_literal.Float = static_cast<float>(_literal.Double);
 			break;
 		case SPECIAL:
+			if (!_literal.Special.compare("nan") || !_literal.Special.compare("nanf"))
+			{
+				_literal.Float = NAN;
+				_literal.Double = NAN;
+				_literal.Special = "impossible";
+			}
+			else if (!_literal.Special.compare("-inff") || !_literal.Special.compare("+inff")
+					|| !_literal.Special.compare("-inf") || !_literal.Special.compare("+inf"))
+			{
+				_literal.Float = std::numeric_limits<float>::infinity();
+				_literal.Double = std::numeric_limits<double>::infinity();	
+				_literal.Special = "impossible";
+			}
 			break;
 		default:
-			break;
+			throw LiteralException();
 	}
-cd }
-
-// void	ScalarConv::displayConversions()
-// {
-// 	t_displayList convList[] = {
-// 		{"char : ", &convToChar},
-// 		{"int : ", &convToInt},
-// 		{"float : ", &convToFloat},
-// 		{"double : ", &convToDouble}
-// 	}
-
-// 	for (int i = 0; i < 4; i++)
-// 	{
-// 		std::cout << convList[i].msg;
-// 		convList[i].fnPtr();
-// 	}
-// }
-
-char	ScalarConv::getChar() const
-{
-	return (_literal.Char);
 }
 
-int		ScalarConv::getInt() const
+void	ScalarConv::displayConversions(int precision)
 {
-	return (_literal.Int);
+	if (_literal.isDisplayable && _type != SPECIAL)
+		std::cout << _literal.Char << std::endl;
+	else
+		std::cout << _literal.Special << std::endl;
+	if (_type != SPECIAL)
+		std::cout << _literal.Int << std::endl;
+	else
+		std::cout << _literal.Special << std::endl;
+	std::cout << std::fixed << std::setprecision(precision);
+	std::cout << _literal.Float << "f" << std::endl;
+	std::cout << _literal.Double << std::endl;
 }
 
-float		ScalarConv::getFloat() const
+int		ScalarConv::getPrecision(std::string str) const
 {
-	return (_literal.Float);
+	size_t pos = 0;
+
+	pos = str.find_first_of(".", pos);
+	switch (_type)
+	{
+		case FLOAT:
+			return (str.length() - pos - 2);
+		case DOUBLE:
+			return (str.length() - pos - 1);
+		default:
+			return (1);
+	}
 }
 
-double		ScalarConv::getDouble() const
+bool	is_printable(double nb)
 {
-	return (_literal.Double);
-}
-
-std::string		ScalarConv::getSpecial() const
-{
-	return (_literal.Special);
-}
-
-bool		ScalarConv::getDisplayStatus()
-{
-	return (_literal.isDisplayable);
+	if (nb < 32 || nb > 126)
+		return false;
+	return true;
 }

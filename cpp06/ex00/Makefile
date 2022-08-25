@@ -7,7 +7,7 @@ NAME	=	ScalarConv
 I		=	incs/
 S		=	srcs/
 O		=	objs/
-SRCS	=	main.cpp ScalarConv.cpp utils.cpp
+SRCS	=	main.cpp ScalarConv.cpp
 SRCS	:=	$(foreach file, $(SRCS), $S$(file))
 OBJS	=	$(SRCS:$S%=$O%.o)
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98 

@@ -30,29 +30,22 @@ class ScalarConv
 private:
 	int			_type;
 	t_literal	_literal;
-
 public:
 	ScalarConv();
-	ScalarConv(char *input);
 	~ScalarConv();
 	ScalarConv(ScalarConv const & rhs);
 	ScalarConv& operator=(ScalarConv const & rhs);
 
-	void	setType(int n);
-	int		getType() const;
-
 	void	getLiteralType(std::string str);
-	bool	checkSpecialCases(std::string str);
+	bool	isSpecialCase(std::string str);
+	bool	isChar(std::string & str, std::string & digits);
+	bool	isInt(std::string & str, std::string & digits);
+	bool	isFloat(std::string & str, std::string & digits);
+	bool	isDouble(std::string & str, std::string & digits);
 
-	void	displayConversions();
 	void	convert();
-
-	char		getChar() const;
-	int			getInt() const;
-	float		getFloat() const;
-	double		getDouble() const;
-	std::string	getSpecial() const;
-	bool		getDisplayStatus();
+	void	displayConversions(int precision);
+	int		getPrecision(std::string str) const;
 
 	class LiteralException : public std::exception
 	{
@@ -71,10 +64,6 @@ public:
 			fn			fnPtr;
 	}				t_displayList;
 };
-
-/*		************	*/
-/*		**	UTILS **	*/
-/*		************	*/
 
 bool	is_printable(double nb);
 
