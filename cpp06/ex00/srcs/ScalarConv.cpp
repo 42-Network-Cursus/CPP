@@ -153,34 +153,34 @@ void	ScalarConv::convert()
 			break;
 		case INT:
 			if (_literal.isDisplayable)
-				_literal.Char = static_cast<int>(_literal.Int);
+				_literal.Char = static_cast<char>(_literal.Int);
 			else
 				_literal.Special = "Non displayable";
-			_literal.Float = _literal.Int;
+			_literal.Float = static_cast<float>(_literal.Int);
 			_literal.Double = _literal.Int;
 			break;
 		case FLOAT:
 			if (_literal.isDisplayable)
-				_literal.Char = static_cast<float>(_literal.Float);
+				_literal.Char = static_cast<char>(_literal.Float);
 			else
 				_literal.Special = "Non displayable";
-			_literal.Int = static_cast<float>(_literal.Float);
+			_literal.Int = static_cast<int>(_literal.Float);
 			_literal.Double = _literal.Float;
 			break;
 		case DOUBLE:
 			if (_literal.isDisplayable)
-				_literal.Char = static_cast<double>(_literal.Double);
+				_literal.Char = static_cast<char>(_literal.Double);
 			else
 				_literal.Special = "Non displayable";
-			_literal.Int = static_cast<double>(_literal.Double);
-			_literal.Float = static_cast<double>(_literal.Double);
+			_literal.Int = static_cast<int>(_literal.Double);
+			_literal.Float = static_cast<float>(_literal.Double);
 			break;
 		case SPECIAL:
 			break;
 		default:
 			break;
 	}
-}
+cd }
 
 // void	ScalarConv::displayConversions()
 // {

@@ -44,6 +44,7 @@ int main(int ac, char *av[])
 			std::cout << scalar.getFloat() << "f" << std::endl;
 			std::cout << scalar.getDouble() << std::endl;
 			// scalar.displayConversions();
+			
 		}
 		catch (std::exception& e)
 		{
