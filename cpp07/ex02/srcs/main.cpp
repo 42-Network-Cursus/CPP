@@ -2,6 +2,7 @@
 #include <Array.hpp>
 
 #define MAX_VAL 750
+
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -44,10 +45,14 @@ int main(int, char**)
         std::cerr << e.what() << '\n';
     }
 
-    for (int i = 0; i < MAX_VAL; i++)
+    for (int i = 0; i < 5; i++)
     {
+		std::cout << "Numbers: " << numbers[i] << std::endl;
+		std::cout << "Mirror: " << mirror[i] << std::endl;
         numbers[i] = rand();
+		std::cout << "New Numbers: " << numbers[i] << std::endl;
+		std::cout << "Mirror: " << mirror[i] << std::endl;
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }
