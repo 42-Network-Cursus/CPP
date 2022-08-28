@@ -9,9 +9,9 @@ void	iter(T* ptr, int len, F f)
 }
 
 template<typename T>
-void	increment(T nb)
+void	increment(T data)
 {
-	nb += 1;
+	data += 1;
 }
 
 #endif

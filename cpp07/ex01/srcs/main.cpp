@@ -18,5 +18,14 @@ int main()
 	
 	for (int i = 0; i < 5; i++)
 		std::cout << floatArray[i] << std::endl;
+
+	char	charArray[5] = { 'a', 'b', 'c', 'd', 'e'};
+	char *	charPtr = charArray;
+	void (*fchar)(char &) = increment;
+	iter(charPtr, 5, fchar);
+	
+	for (int i = 0; i < 5; i++)
+		std::cout << charArray[i] << std::endl;
+
 	return (0);
 }
