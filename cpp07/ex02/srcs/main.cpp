@@ -54,5 +54,6 @@ int main(int, char**)
 		std::cout << "Mirror: " << mirror[i] << std::endl;
     }
     delete [] mirror;
+	std::cout << "Numbers[0] after Mirror delete: " << numbers[0] << std::endl;
     return 0;
 }

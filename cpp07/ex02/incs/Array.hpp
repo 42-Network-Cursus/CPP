@@ -10,16 +10,18 @@ class Array
 		T*				_tab;
 		unsigned int	_size;
 	public:
-		Array(): _tab(NULL), _size(0) { 
-			std::cout << "Default Array Constructor\n"; }
-		Array(const unsigned int n): _tab(new T[n]), _size(n) {
-			std::cout << "Array Constructor w/ uInt param\n";	}
-		~Array() {
+		Array(): _tab(NULL), _size(0) { std::cout << "Default Array Constructor\n"; }
+		Array(const unsigned int n): _tab(new T[n]), _size(n) { std::cout << "Array Constructor w/ uInt param\n"; }
+		~Array() 
+		{
 			std::cout << "Array Destructor\n"; 
-			delete[] _tab; }
-		Array(const Array<T> & rhs): _tab(NULL), _size(0) { 
+			delete[] _tab; 
+		}
+		Array(const Array<T> & rhs): _tab(NULL), _size(0) 
+		{ 
 			std::cout << "Array Copy Constructor\n";
-			*this = rhs; }
+			*this = rhs; 
+		}
 
 		Array<T> &	operator=(const  Array<T> & rhs)
 		{

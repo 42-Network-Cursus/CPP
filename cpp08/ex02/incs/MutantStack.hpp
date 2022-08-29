@@ -3,16 +3,25 @@
 
 # include <stack>
 # include <iostream>
-# include <deque>
 
 template<typename T>
 class MutantStack : public std::stack<T>
 {
 	public:
-		MutantStack();
-		virtual ~MutantStack();
-		MutantStack(const MutantStack & rhs);
-		MutantStack & operator=(const MutantStack & rhs);
+		MutantStack() { std::cout << "Default constructor\n"; }
+		virtual ~MutantStack() { std::cout << "Destructor\n"; }
+		MutantStack(const MutantStack & rhs) 
+		{
+			std::cout << "Copy constructor\n";
+			this->c = rhs.c;
+		}
+		MutantStack & operator=(const MutantStack & rhs) 
+		{
+			std::cout << "Assignment operator\n";
+			if (this != &rhs)
+				this->c = rhs.c;
+			return (*this);
+		}
 
 		typedef	typename std::stack<T>::container_type container_type;
 		typedef typename container_type::iterator iterator;

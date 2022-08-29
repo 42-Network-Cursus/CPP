@@ -66,6 +66,8 @@ bool	ScalarConv::isInt(std::string & str, std::string & digits)
 	size_t	pos = 0;
 	std::stringstream	ss;
 	
+	if (str[0] == '-')
+		pos += 1;
 	pos = str.find_first_not_of(digits, pos);
 	if (pos == std::string::npos)
 	{
@@ -82,6 +84,8 @@ bool	ScalarConv::isFloat(std::string & str, std::string & digits)
 {
 	size_t	pos = 0;
 
+	if (str[0] == '-')
+		pos += 1;
 	pos = str.find_first_not_of(digits, pos);
 	if (str[pos] == 'f')
 	{
@@ -118,6 +122,8 @@ bool	ScalarConv::isDouble(std::string & str, std::string & digits)
 {
 	size_t	pos = 0;
 
+	if (str[0] == '-')
+		pos += 1;
 	pos = str.find_first_not_of(digits, pos);
 	if (str[pos] == '.')
 	{
@@ -197,9 +203,11 @@ void	ScalarConv::convert()
 			else if (!_literal.Special.compare("-inff") || !_literal.Special.compare("+inff")
 					|| !_literal.Special.compare("-inf") || !_literal.Special.compare("+inf"))
 			{
+				_type = INF;
+				_literal.Int = std::numeric_limits<int>::infinity();
 				_literal.Float = std::numeric_limits<float>::infinity();
 				_literal.Double = std::numeric_limits<double>::infinity();	
-				_literal.Special = "impossible";
+				_literal.Special = "Non displayable";
 			}
 			break;
 		default:

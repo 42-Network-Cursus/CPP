@@ -14,6 +14,7 @@
 # define FLOAT			2
 # define DOUBLE			3
 # define SPECIAL		4
+# define INF			5
 
 typedef struct s_literal
 {
